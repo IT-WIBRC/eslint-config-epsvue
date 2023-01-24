@@ -1,0 +1,17 @@
+node_modules/**
+package-lock.json
+.husky/**
+.idea/**
+dist/**
+*.js
+*.yaml
+*.map
+*.conf
+Dockerfile
+*.Dockerfile
+*.json
+*.iml
+*.md
+*.ico
+!.prettierrc.js
+*/env.d.ts

@@ -1,0 +1,8 @@
+node_modules/**
+package-lock.json
+.husky/**
+.idea/**
+dist/**
+deployment/**
+src/services/**
+!.prettierrc.js

@@ -1,0 +1,47 @@
+{
+  "extends": [
+    "stylelint-config-html/html",
+    "stylelint-config-html/vue",
+    "stylelint-config-standard"
+  ],
+  "rules": {
+    "alpha-value-notation": null,
+    "at-rule-empty-line-before": null,
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "extends",
+          "tailwind",
+          "layer",
+          "apply",
+          "responsive",
+          "variants",
+          "screen"
+        ]
+      }
+    ],
+    "block-no-empty": null,
+    "color-function-notation": null,
+    "color-hex-case": null,
+    "color-hex-length": null,
+    "length-zero-no-unit": null,
+    "no-descending-specificity": null,
+    "no-empty-first-line": null,
+    "no-empty-source": null,
+    "selector-class-pattern": null,
+    "selector-pseudo-element-colon-notation": null,
+    "selector-pseudo-element-no-unknown": null,
+    "shorthand-property-no-redundant-values": null,
+    "unit-allowed-list": [
+      "%",
+      "deg",
+      "em",
+      "px",
+      "rem",
+      "s",
+      "vh",
+      "vw"
+    ]
+  }
+}

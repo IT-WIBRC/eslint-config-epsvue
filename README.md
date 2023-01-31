@@ -1,23 +1,31 @@
 # wibrc-eslint-config-vue
 An eslint shareable configuration for Vuejs app
-## Install since github
+## 1. Install since github as dev dependency
 
 - http
 ```
-  npm install git+https://github.com/IT-WIBRC/wibrc-eslint-config-vue.git
+  npm install -D git+https://github.com/IT-WIBRC/wibrc-eslint-config-vue.git
 ```
 
 - ssh
 ```
-npm install git+ssh://git@github.com:IT-WIBRC/wibrc-eslint-config-vue.git
+npm install -D git+ssh://git@github.com:IT-WIBRC/wibrc-eslint-config-vue.git
 ```
 
 other
 ```
-npm install repository-name
+npm install -D repository-name
 ```
 
 for a specific branch
 ```
-  npm install repository#branch
+  npm install -D repository#branch
+```
+
+## 2. Extend the configuration
+create the `.eslintrc` file in the root of your project. after copy this in the file:
+```
+{
+  extends: "@wibrc/eslint-config-vue"
+}
 ```

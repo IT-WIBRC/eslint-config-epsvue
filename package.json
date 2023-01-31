@@ -11,6 +11,9 @@
   },
   "keywords": [
     "eslint",
+    "prettier",
+    "vue",
+    "stylelint",
     "configuration"
   ],
   "author": "wibrc",

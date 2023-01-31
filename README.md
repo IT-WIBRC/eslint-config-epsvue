@@ -4,12 +4,12 @@ An eslint shareable configuration for Vuejs app
 
 - http
 ```
-  npm install git+https://github.com/{repositoty name}.git
+  npm install git+https://github.com/IT-WIBRC/wibrc-eslint-config-vue.git
 ```
 
 - ssh
 ```
-npm install git+ssh://git@github.com/{repository name}.git
+npm install git+ssh://git@github.com:IT-WIBRC/wibrc-eslint-config-vue.git
 ```
 
 other

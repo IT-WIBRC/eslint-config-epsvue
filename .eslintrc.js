@@ -1,5 +1,5 @@
 /* eslint-env node */
-require("@rushstack/eslint-patch/modern-module-resolution");
+require("@rushstack/eslint-config/patch/modern-module-resolution");
 
 module.exports = {
   root: true,
@@ -9,10 +9,13 @@ module.exports = {
     "@vue/eslint-config-typescript/recommended",
     "@vue/eslint-config-prettier",
     "plugin:storybook/recommended",
+    "@rushstack/eslint-config/profile/web-app"
   ],
   env: {
     jquery: true,
     node: true,
+    browser: true,
+    jest: true,
     "vue/setup-compiler-macros": true,
   },
   overrides: [
@@ -83,7 +86,7 @@ module.exports = {
       },
     ],
     "quote-props": ["error", "as-needed"],
-    "sort-imports": 0,
+    "sort-imports": 1,
     "space-before-blocks": 2,
     "space-before-function-paren": "off",
     "space-in-parens": ["error", "never"],

@@ -28,7 +28,6 @@ It's recommended you install this once per every project. ESLint used to have gl
           ```
           
         b. Using npm
-      
           ```
             npm install -D repository-name
           ```

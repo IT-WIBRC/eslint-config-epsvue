@@ -22,8 +22,7 @@ It's recommended you install this once per every project. ESLint used to have gl
           ```
             npm install -D git+https://github.com/IT-WIBRC/wibrc-eslint-config-vue.git
           ```
-          
-   - Using ssh
+        - Using ssh
           ```
             npm install -D git+ssh://git@github.com:IT-WIBRC/wibrc-eslint-config-vue.git
           ```

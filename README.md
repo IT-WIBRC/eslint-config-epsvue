@@ -51,7 +51,7 @@ It's recommended you install this once per every project. ESLint used to have gl
  
    3. You can add two scripts to your package.json to lint and/or fix:
 
-    ```json
+    ```
     "scripts": {
       "lint": "eslint .",
       "lint:fix": "eslint . --fix"
@@ -64,7 +64,7 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    If you'd like to overwrite eslint or prettier settings, you can add the rules in your `.eslintrc` file. The [ESLint rules](https://eslint.org/docs/rules/) go directly under `"rules"`.
 
-    ```js
+    ```
     {
       "extends": [
         "@wibrc/eslint-config-vue"
@@ -81,7 +81,7 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    If you want custom [prettier options](https://prettier.io/docs/en/options.html), it's recommended to create a `.prettierrc` file in your root directory like so:
 
-    ```js
+    ```
     {
       "singleQuote": true,
       "endOfLine": "auto",
@@ -91,7 +91,7 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    You can also put this in your EsLint config as a rule like so:
 
-    ```json
+    ```
     {
       "extends": ["@wibrc/eslint-config-vue"],
       "rules": {

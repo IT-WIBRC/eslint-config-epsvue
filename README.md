@@ -43,7 +43,7 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    create the `.eslintrc.*` file in the root of your project. after copy this in the file:
 
-   ```json
+   ```js
     {
       extends: "@wibrc/eslint-config-vue"
     }

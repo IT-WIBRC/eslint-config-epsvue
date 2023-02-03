@@ -19,10 +19,13 @@ It's recommended you install this once per every project. ESLint used to have gl
       a. Since github as dev dependency
 
         - Using http
+          
           ```
             npm install -D git+https://github.com/IT-WIBRC/wibrc-eslint-config-vue.git
           ```
+          
         - Using ssh
+          
           ```
             npm install -D git+ssh://git@github.com:IT-WIBRC/wibrc-eslint-config-vue.git
           ```
@@ -30,10 +33,12 @@ It's recommended you install this once per every project. ESLint used to have gl
         b. Using npm
         
          - From `Main` or `Master` branch
-            ```
-            npm install -D repository-name
-            ```
+          
+          ```
+           npm install -D repository-name
+          ```
          - From a specific branch
+            
             ```
             npm install -D repository#branch
             ```
@@ -64,16 +69,16 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    If you'd like to overwrite eslint or prettier settings, you can add the rules in your `.eslintrc` file. The [ESLint rules](https://eslint.org/docs/rules/) go directly under `"rules"`.
 
-    ```json
-     {
-       "extends": [
-         "@wibrc/eslint-config-vue"
-       ],
-       "rules": {
-         "no-console": 2,
-       }
-     }
-    ```
+   ```json
+    {
+      "extends": [
+        "@wibrc/eslint-config-vue"
+      ],
+      "rules": {
+        "no-console": 2,
+      }
+    }
+   ```
 
    ### Prettier Rules
 
@@ -81,38 +86,38 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    If you want custom [prettier options](https://prettier.io/docs/en/options.html), it's recommended to create a `.prettierrc` file in your root directory like so:
 
-    ```js
-     {
-       "singleQuote": true,
-       "endOfLine": "auto",
-       "tabWidth": 4
-     }
-    ```
+   ```js
+    {
+      "singleQuote": true,
+      "endOfLine": "auto",
+      "tabWidth": 4
+    }
+   ```
 
    You can also put this in your EsLint config as a rule like so:
 
-    ```js
-     {
-       "extends": ["@wibrc/eslint-config-vue"],
-       "rules": {
-         ... any eslint rules here
-         "prettier/prettier": [
-           "error",
-           {
-             "singleQuote": true,
-             "endOfLine": "auto",
-             "tabWidth": 4
-           },
-         ],
-       }
-     }
-    ```
+   ```js
+    {
+      "extends": ["@wibrc/eslint-config-vue"],
+      "rules": {
+        ... any eslint rules here
+        "prettier/prettier": [
+          "error",
+          {
+            "singleQuote": true,
+            "endOfLine": "auto",
+            "tabWidth": 4
+          },
+        ],
+      }
+    }
+   ```
 
    Note if you are switching to double quotes, you'll also need to add this eslint rule, or they will fight to the death!
 
-    ```js
-     quotes: ["error", "double"];
-    ```
+   ```js
+    quotes: ["error", "double"];
+   ```
 
    ## With VS Code
     
@@ -126,11 +131,11 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    add this : 
      
-     ```
-      "vetur.validation.template": false,
-      "vetur.validation.script": false,
-      "vetur.validation.style": false,   
-     ```
+   ```json
+    "vetur.validation.template": false,
+    "vetur.validation.script": false,
+    "vetur.validation.style": false,   
+   ```
     
 ## With WSL
 

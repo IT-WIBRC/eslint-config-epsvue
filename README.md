@@ -149,23 +149,23 @@ It's recommended you install this once per every project. ESLint used to have gl
 
   1. Open ESLint configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > ESLint (optionally just search settings for "eslint")
   1. Select **Automatic ESLint Configuration**
-  1. Check **Run eslint --fix on save**
+  2. Check **Run eslint --fix on save**
 
   ### If you choose Global Install
 
   The following steps are for a typical Node / ESLint global installtion. If you have a customized setup, refer to JetBrains docs for more [ESLint Configuration Options](https://www.jetbrains.com/help/webstorm/eslint.html#ws_js_eslint_manual_configuration).
 
   1. Open ESLint configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > ESLint (optionally just search settings for "eslint")
-  1. Select **Manual ESLint configuration**
-  1. Choose your **Node interpreter** from the detected installations
-  1. Select the global **ESLint package** from the dropdown
-  1. Leave Configuration File as **Automatic Search**
-  1. Check **Run eslint --fix on save**
+  2. Select **Manual ESLint configuration**
+  3. Choose your **Node interpreter** from the detected installations
+  4. Select the global **ESLint package** from the dropdown
+  5. Leave Configuration File as **Automatic Search**
+  6. Check **Run eslint --fix on save**
 
   ### Ensure the Prettier plugin is disabled if installed.
 
   1. Open Prettier configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > Prettier (optionally just search settings for "prettier")
-  1. Uncheck both **On code reformat** and **On save**
-  1. _Optional BUT IMPORTANT:_ If you have the Prettier extension enabled for other languages like CSS and HTML, turn it off for JS since we are doing it through Eslint already.
+  2. Uncheck both **On code reformat** and **On save**
+  3. _Optional BUT IMPORTANT:_ If you have the Prettier extension enabled for other languages like CSS and HTML, turn it off for JS since we are doing it through Eslint already.
      1. Make sure the **Run for files** glob does not include `js,ts,jsx,tsx`.
      2. An example glob for styles, config, and markdown. `{**/*,*}.{yml,css,sass,md}`

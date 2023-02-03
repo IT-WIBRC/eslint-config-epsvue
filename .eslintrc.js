@@ -13,6 +13,8 @@ module.exports = {
   env: {
     jquery: true,
     node: true,
+    browser: true,
+    jest: true,
     "vue/setup-compiler-macros": true,
   },
   overrides: [
@@ -83,7 +85,7 @@ module.exports = {
       },
     ],
     "quote-props": ["error", "as-needed"],
-    "sort-imports": 0,
+    "sort-imports": 1,
     "space-before-blocks": 2,
     "space-before-function-paren": "off",
     "space-in-parens": ["error", "never"],

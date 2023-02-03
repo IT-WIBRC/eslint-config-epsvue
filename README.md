@@ -34,14 +34,14 @@ It's recommended you install this once per every project. ESLint used to have gl
         
          - From `Main` or `Master` branch
           
-          ```
-           npm install -D repository-name
-          ```
+           ```
+            npm install -D repository-name
+           ```
          - From a specific branch
             
-            ```
+           ```
             npm install -D repository#branch
-            ```
+           ```
       
 
    2. Extend the configuration

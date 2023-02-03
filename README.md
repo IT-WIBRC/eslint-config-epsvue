@@ -30,13 +30,14 @@ It's recommended you install this once per every project. ESLint used to have gl
         b. Using npm
         
          - From `Main` or `Master` branch
-          ```
-          npm install -D repository-name
-          ```
-     - From a specific branch
-       ```
-       npm install -D repository#branch
-       ```
+            ```
+            npm install -D repository-name
+            ```
+         - From a specific branch
+            ```
+            npm install -D repository#branch
+            ```
+      
 
    2. Extend the configuration
 
@@ -110,7 +111,7 @@ It's recommended you install this once per every project. ESLint used to have gl
    Note if you are switching to double quotes, you'll also need to add this eslint rule, or they will fight to the death!
 
     ```js
-    quotes: ["error", "double"];
+     quotes: ["error", "double"];
     ```
 
    ## With VS Code

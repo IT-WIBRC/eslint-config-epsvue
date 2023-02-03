@@ -33,10 +33,10 @@ It's recommended you install this once per every project. ESLint used to have gl
           ```
           npm install -D repository-name
           ```
-         - From a specific branch
-            ```
-            npm install -D repository#branch
-            ```
+     - From a specific branch
+       ```
+       npm install -D repository#branch
+       ```
 
    2. Extend the configuration
 
@@ -64,14 +64,14 @@ It's recommended you install this once per every project. ESLint used to have gl
    If you'd like to overwrite eslint or prettier settings, you can add the rules in your `.eslintrc` file. The [ESLint rules](https://eslint.org/docs/rules/) go directly under `"rules"`.
 
     ```json
-    {
-      "extends": [
-        "@wibrc/eslint-config-vue"
-      ],
-      "rules": {
-        "no-console": 2,
-      }
-    }
+     {
+       "extends": [
+         "@wibrc/eslint-config-vue"
+       ],
+       "rules": {
+         "no-console": 2,
+       }
+     }
     ```
 
    ### Prettier Rules
@@ -80,31 +80,31 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    If you want custom [prettier options](https://prettier.io/docs/en/options.html), it's recommended to create a `.prettierrc` file in your root directory like so:
 
-    ```
-    {
-      "singleQuote": true,
-      "endOfLine": "auto",
-      "tabWidth": 4
-    }
+    ```js
+     {
+       "singleQuote": true,
+       "endOfLine": "auto",
+       "tabWidth": 4
+     }
     ```
 
    You can also put this in your EsLint config as a rule like so:
 
-    ```
-    {
-      "extends": ["@wibrc/eslint-config-vue"],
-      "rules": {
-        ... any eslint rules here
-        "prettier/prettier": [
-          "error",
-          {
-            "singleQuote": true,
-            "endOfLine": "auto",
-            "tabWidth": 4
-          },
-        ],
-      }
-    }
+    ```js
+     {
+       "extends": ["@wibrc/eslint-config-vue"],
+       "rules": {
+         ... any eslint rules here
+         "prettier/prettier": [
+           "error",
+           {
+             "singleQuote": true,
+             "endOfLine": "auto",
+             "tabWidth": 4
+           },
+         ],
+       }
+     }
     ```
 
    Note if you are switching to double quotes, you'll also need to add this eslint rule, or they will fight to the death!

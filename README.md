@@ -35,12 +35,12 @@ It's recommended you install this once per every project. ESLint used to have gl
          - From `Main` or `Master` branch
           
            ```
-            npm install -D repository-name
+            npm install -D @wibrc/eslint-config-vue
            ```
          - From a specific branch
             
            ```
-            npm install -D repository#branch
+            npm install -D @wibrc/eslint-config-vue#branch
            ```
       
 

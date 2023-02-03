@@ -28,13 +28,14 @@ It's recommended you install this once per every project. ESLint used to have gl
           ```
           
         b. Using npm
+        
+         - From `Main` or `Master` branch
           ```
-            npm install -D repository-name
+          npm install -D repository-name
           ```
-
-        For a specific branch 
+         - From a specific branch
             ```
-              npm install -D repository#branch
+            npm install -D repository#branch
             ```
 
    2. Extend the configuration
@@ -49,12 +50,12 @@ It's recommended you install this once per every project. ESLint used to have gl
  
    3. You can add two scripts to your package.json to lint and/or fix:
 
-    ```
+   ```json
     "scripts": {
-      "lint": "eslint .",
-      "lint:fix": "eslint . --fix"
+     "lint": "eslint .",
+     "lint:fix": "eslint . --fix"
     },
-    ```
+   ```
     
    6. Now you can manually lint your code by running `npm run lint` and fix all fixable issues with `npm run lint:fix`. You probably want your editor to do this though.
 
@@ -62,7 +63,7 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    If you'd like to overwrite eslint or prettier settings, you can add the rules in your `.eslintrc` file. The [ESLint rules](https://eslint.org/docs/rules/) go directly under `"rules"`.
 
-    ```
+    ```json
     {
       "extends": [
         "@wibrc/eslint-config-vue"

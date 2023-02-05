@@ -15,13 +15,13 @@ You might like them - or you might not. Don't worry you can always change them.
 
 It's recommended you install this once per every project. ESLint used to have global configs, but no longer.
 
-1.  Installation
+1. Installation
 
 ```js
  npm install -D eslint-config-epsvue
 ```
 
-2.  Extend the configuration
+2. Extend the configuration
 
 create the `.eslintrc.*` file in the root of your project. after copy this in the file:
 
@@ -31,7 +31,7 @@ create the `.eslintrc.*` file in the root of your project. after copy this in th
  }
 ```
 
-3.  You can add two scripts to your package.json to lint and/or fix:
+3. You can add two scripts to your package.json to lint and/or fix:
 
 ```json
  "scripts": {
@@ -40,7 +40,7 @@ create the `.eslintrc.*` file in the root of your project. after copy this in th
  },
 ```
 
-6.  Now you can manually lint your code by running `npm run lint` and fix all fixable issues with `npm run lint:fix`. You probably want your editor to do this though.
+6. Now you can manually lint your code by running `npm run lint` and fix all fixable issues with `npm run lint:fix`. You probably want your editor to do this though.
 
 ## Settings
 
@@ -90,13 +90,23 @@ You can also put this in your EsLint config as a rule like so:
 
 Note if you are switching to double quotes, you'll also need to add this eslint rule, or they will fight to the death!
 
-```js
-quotes: ["error", "double"];
-```
+   ```js
+    quotes: ["error", "double"];
+   ```
+
+### Stylelint
+
+   create a `.stylelintrc` file and copy the rules in the rules in this repository in the file `.stylelintrc` into you project. And the script
+
+   ```json
+   "scripts": {
+     "stylelint": "stylelint '**/*.css'",
+   }
+   ```
 
 ## With VS Code
 
-You should read this entire thing. Serious!
+   You should read this entire thing. Serious!
 
 Once you have done one, or both, of the above installs. You probably want your editor to lint and fix for you. Here are the instructions for VS Code:
 
@@ -137,7 +147,7 @@ The following steps are for a typical Node / ESLint global installtion. If you h
 5. Leave Configuration File as **Automatic Search**
 6. Check **Run eslint --fix on save**
 
-### Ensure the Prettier plugin is disabled if installed.
+### Ensure the Prettier plugin is disabled if installed
 
 1. Open Prettier configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > Prettier (optionally just search settings for "prettier")
 2. Uncheck both **On code reformat** and **On save**

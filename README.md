@@ -1,4 +1,4 @@
-# @eslint-config-vue
+# @eps-config-vue
 
 These are my settings for ESLint and Prettier that you can use for Vuejs app
 
@@ -8,7 +8,7 @@ You might like them - or you might not. Don't worry you can always change them.
 - Lints JavaScript and TypeScript based on the latest standards
 - Fixes issues and formatting errors with Prettier
 - Lints + Fixes inside of html script tags
-- You can see all the [rules here](https://github.com/IT-WIBRC/eslint-config-vue/blob/master/.eslintrc.js). You are very welcome to overwrite any of these settings, or just fork the entire thing to create your own.
+- You can see all the [rules here](https://github.com/IT-WIBRC/eps-config-vue/blob/master/.eslintrc.js). You are very welcome to overwrite any of these settings, or just fork the entire thing to create your own.
 
 ## Project install
 
@@ -21,13 +21,13 @@ It's recommended you install this once per every project. ESLint used to have gl
         - Using http
           
           ```
-            npm install -D git+https://github.com/IT-WIBRC/eslint-config-vue.git
+            npm install -D git+https://github.com/IT-WIBRC/eps-config-vue.git
           ```
           
         - Using ssh
           
           ```
-            npm install -D git+ssh://git@github.com:IT-WIBRC/eslint-config-vue.git
+            npm install -D git+ssh://git@github.com:IT-WIBRC/eps-config-vue.git
           ```
           
         b. Using npm (not yet usable)
@@ -35,12 +35,12 @@ It's recommended you install this once per every project. ESLint used to have gl
          - From `Main` or `Master` branch
           
            ```
-            npm install -D eslint-config-vue
+            npm install -D eps-config-vue
            ```
          - From a specific branch
             
            ```
-            npm install -D eslint-config-vue#branch
+            npm install -D eps-config-vue#branch
            ```
       
 
@@ -50,7 +50,7 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    ```js
     {
-      extends: "eslint-config-vue"
+      extends: "eps-config-vue"
     }
    ```
  
@@ -72,7 +72,7 @@ It's recommended you install this once per every project. ESLint used to have gl
    ```json
     {
       "extends": [
-        "eslint-config-vue"
+        "eps-config-vue"
       ],
       "rules": {
         "no-console": 2,
@@ -98,7 +98,7 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    ```js
     {
-      "extends": ["eslint-config-vue"],
+      "extends": ["eps-config-vue"],
       "rules": {
         ... any eslint rules here
         "prettier/prettier": [

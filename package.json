@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-epsvue",
-  "version": "1.1.1",
+  "version": "0.0.1",
   "description": "A reusable and shareable `eslint` configuration for Vue project",
   "main": "index.js",
   "scripts": {
@@ -26,9 +26,9 @@
     "url": "git+https://github.com/IT-WIBRC/eslint-config-epsvue.git"
   },
   "peerDependencies": {
-    "eslint": "^9.0.0",
-    "prettier": "^3.3.0",
-    "stylelint": "^14.0.0 || ^16.0.0"
+    "eslint": "^8.32.0",
+    "prettier": "^2.8.3",
+    "stylelint": "^14.2.0"
   },
   "dependencies": {
     "@rushstack/eslint-patch": "^1.10.3",

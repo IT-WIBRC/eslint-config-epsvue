@@ -8,7 +8,7 @@ You might like them - or you might not. Don't worry you can always change them.
 - Lints JavaScript and TypeScript based on the latest standards
 - Fixes issues and formatting errors with Prettier
 - Lints + Fixes inside of html script tags
-- You can see all the [rules here](https://github.com/IT-WIBRC/wibrc-eslint-config-vue/blob/master/.eslintrc.js). You are very welcome to overwrite any of these settings, or just fork the entire thing to create your own.
+- You can see all the [rules here](https://github.com/IT-WIBRC/eslint-config-vue/blob/master/.eslintrc.js). You are very welcome to overwrite any of these settings, or just fork the entire thing to create your own.
 
 ## Project install
 
@@ -21,26 +21,26 @@ It's recommended you install this once per every project. ESLint used to have gl
         - Using http
           
           ```
-            npm install -D git+https://github.com/IT-WIBRC/wibrc-eslint-config-vue.git
+            npm install -D git+https://github.com/IT-WIBRC/eslint-config-vue.git
           ```
           
         - Using ssh
           
           ```
-            npm install -D git+ssh://git@github.com:IT-WIBRC/wibrc-eslint-config-vue.git
+            npm install -D git+ssh://git@github.com:IT-WIBRC/eslint-config-vue.git
           ```
           
-        b. Using npm
+        b. Using npm (not yet usable)
         
          - From `Main` or `Master` branch
           
            ```
-            npm install -D @wibrc/eslint-config-vue
+            npm install -D eslint-config-vue
            ```
          - From a specific branch
             
            ```
-            npm install -D @wibrc/eslint-config-vue#branch
+            npm install -D eslint-config-vue#branch
            ```
       
 
@@ -50,7 +50,7 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    ```js
     {
-      extends: "@wibrc/eslint-config-vue"
+      extends: "eslint-config-vue"
     }
    ```
  
@@ -72,7 +72,7 @@ It's recommended you install this once per every project. ESLint used to have gl
    ```json
     {
       "extends": [
-        "@wibrc/eslint-config-vue"
+        "eslint-config-vue"
       ],
       "rules": {
         "no-console": 2,
@@ -98,7 +98,7 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    ```js
     {
-      "extends": ["@wibrc/eslint-config-vue"],
+      "extends": ["eslint-config-vue"],
       "rules": {
         ... any eslint rules here
         "prettier/prettier": [

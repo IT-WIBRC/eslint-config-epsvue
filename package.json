@@ -43,17 +43,6 @@
     "stylelint-processor-html": "^1.0.0",
     "stylelint-scss": "^4.1.0"
   },
-  "lint-staged": {
-    "*.{js,ts,vue}": [
-      "eslint"
-    ],
-    "*.{css,vue}": [
-      "stylelint"
-    ],
-    "*.{graphql,json}": [
-      "prettier --write"
-    ]
-  },
   "engines": {
     "node": ">=16.0.0",
     "npm": ">=8.0.0"

@@ -1,4 +1,4 @@
-# @wibrc-eslint-config-vue
+# @eslint-config-vue
 
 These are my settings for ESLint and Prettier that you can use for Vuejs app
 

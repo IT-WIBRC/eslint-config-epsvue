@@ -1,5 +1,5 @@
 {
-  "name": "eps-config-vue",
+  "name": "@gge/eps-config-vue",
   "version": "0.0.1",
   "description": "A reusable and shareable `eslint` configuration for Vue project",
   "main": "index.js",
@@ -16,8 +16,15 @@
     "stylelint",
     "configuration"
   ],
-  "author": "IT-WIBRC",
+  "author": {
+    "name": "IT-WIBRC",
+    "email": "wibr.se.jc@gmail.com"
+  },
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IT-WIBRC/@gge/eps-config-vue/"
+  },
   "peerDependencies": {
     "eslint": "^8.32.0",
     "prettier": "^2.8.3",

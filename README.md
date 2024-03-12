@@ -30,7 +30,7 @@ It's recommended you install this once per every project. ESLint used to have gl
             npm install -D git+ssh://git@github.com:IT-WIBRC/eslint-vue-config.git
           ```
           
-        b. $${\color{red}Using npm (not yet usable)}$$
+        b. $${\color{red}(Not \space yet \space usable)}$$
         
          - From `Main` or `Master` branch
           

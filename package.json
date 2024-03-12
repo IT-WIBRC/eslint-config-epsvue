@@ -1,5 +1,5 @@
 {
-  "name": "@wibrc/eslint-config-vue",
+  "name": "eslint-vue-config",
   "version": "0.0.1",
   "description": "A reusable and shareable `eslint` configuration for Vue project",
   "main": "index.js",
@@ -16,13 +16,12 @@
     "stylelint",
     "configuration"
   ],
-  "author": "wibrc",
+  "author": "IT-WIBRC",
   "license": "ISC",
   "peerDependencies": {
-    "lint-staged": "^12.1.2",
-    "prettier": "^2.8.3",
-    "stylelint": "^14.2.0",
-    "eslint": "^8.32.0"
+    "eslint": "8.32.0",
+    "prettier": "2.8.3",
+    "stylelint": "14.2.0"
   },
   "dependencies": {
     "@rushstack/eslint-patch": "^1.1.0",
@@ -42,17 +41,6 @@
     "stylelint-config-standard-scss": "^3.0.0",
     "stylelint-processor-html": "^1.0.0",
     "stylelint-scss": "^4.1.0"
-  },
-  "lint-staged": {
-    "*.{js,ts,vue}": [
-      "eslint"
-    ],
-    "*.{css,vue}": [
-      "stylelint"
-    ],
-    "*.{graphql,json}": [
-      "prettier --write"
-    ]
   },
   "engines": {
     "node": ">=16.0.0",

@@ -30,7 +30,7 @@ It's recommended you install this once per every project. ESLint used to have gl
             npm install -D git+ssh://git@github.com:IT-WIBRC/eslint-vue-config.git
           ```
           
-        b. Using npm package <code style="color: red">Not yet usable</code>
+        b. Using npm package <code style="color : red">Not yet usable</code>
         
          - From `Main` or `Master` branch
           

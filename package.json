@@ -1,5 +1,5 @@
 {
-  "name": "@gge/eps-config-vue",
+  "name": "@it-wibrc/eps-config-vue",
   "version": "0.0.1",
   "description": "A reusable and shareable `eslint` configuration for Vue project",
   "main": "index.js",

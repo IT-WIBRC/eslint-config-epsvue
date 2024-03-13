@@ -24,7 +24,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git@github.com:IT-WIBRC/eps-config-vue.git"
+    "url": "https://github.com/IT-WIBRC/eslint-config-epsvue"
   },
   "peerDependencies": {
     "eslint": "^8.32.0",

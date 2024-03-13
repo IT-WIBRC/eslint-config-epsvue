@@ -1,1 +1,3 @@
-module.exports = require("./.eslintrc.js");
+const eslint = require("./.eslintrc.js");
+
+module.exports = eslint;

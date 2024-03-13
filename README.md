@@ -17,7 +17,7 @@ It's recommended you install this once per every project. ESLint used to have gl
    1. Installation
         
   ```js
-   npm install @it-wibrc/eslint-config-epsvue
+   npm install eslint-config-epsvue
   ```
    2. Extend the configuration
 
@@ -25,7 +25,7 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    ```js
     {
-      extends: ["@it-wibrc/eslint-config-epsvue"]
+      extends: ["eslint-config-epsvue"]
     }
    ```
  
@@ -47,7 +47,7 @@ It's recommended you install this once per every project. ESLint used to have gl
    ```json
     {
       "extends": [
-        "@it-wibrc/eslint-config-epsvue"
+        "eslint-config-epsvue"
       ],
       "rules": {
         "no-console": 2,

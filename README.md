@@ -15,34 +15,12 @@ You might like them - or you might not. Don't worry you can always change them.
 It's recommended you install this once per every project. ESLint used to have global configs, but no longer.
 
    1. Install
-    
-      a. Since github as dev dependency
-
-        - Using http
-          
-          ```
-            npm install -D git+https://github.com/IT-WIBRC/eslint-config-epsvue.git
-          ```
-          
-        - Using ssh
-          
-          ```
-            npm install -D git+ssh://git@github.com:IT-WIBRC/eslint-config-epsvue.git
-          ```
-          
-        b. Using npm
         
-         - From `Main` or `Master` branch
+      - From `Main` or `Master` branch
           
-           ```
-            npm install -D eslint-config-epsvue
-           ```
-         - From a specific branch
-            
-           ```
-            npm install -D eslint-config-epsvue#branch
-           ```
-      
+     ```
+      npm install @it-wibrc/eslint-config-epsvue@1.0.0
+     ```
 
    2. Extend the configuration
 
@@ -50,7 +28,7 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    ```js
     {
-      extends: "@it-wibrc/eslint-config-epsvue"
+      extends: ["@it-wibrc/eslint-config-epsvue"]
     }
    ```
  
@@ -72,7 +50,7 @@ It's recommended you install this once per every project. ESLint used to have gl
    ```json
     {
       "extends": [
-        "eslint-config-epsvue"
+        "@it-wibrc/eslint-config-epsvue"
       ],
       "rules": {
         "no-console": 2,

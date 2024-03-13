@@ -1,4 +1,4 @@
-# @it-wibrc/eslint-config-epsvue
+# eslint-config-epsvue
 
 These are my settings for ESLint and Prettier that you can use for Vuejs app
 
@@ -14,14 +14,12 @@ You might like them - or you might not. Don't worry you can always change them.
 
 It's recommended you install this once per every project. ESLint used to have global configs, but no longer.
 
-   1. Install
+   1. Installation
         
       - From `Main` or `Master` branch
-          
      ```
-      npm install @it-wibrc/eslint-config-epsvue@1.0.0
+      npm install @it-wibrc/eslint-config-epsvue
      ```
-
    2. Extend the configuration
 
    create the `.eslintrc.*` file in the root of your project. after copy this in the file:

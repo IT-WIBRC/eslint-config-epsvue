@@ -17,7 +17,7 @@ It's recommended you install this once per every project. ESLint used to have gl
    1. Installation
         
   ```js
-   npm install eslint-config-epsvue
+   npm install -D eslint-config-epsvue
   ```
    2. Extend the configuration
 

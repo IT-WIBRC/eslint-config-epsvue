@@ -16,10 +16,7 @@
     "stylelint",
     "configuration"
   ],
-  "author": {
-    "name": "it-wibrc",
-    "email": "wibr.se.jc@gmail.com"
-  },
+  "author": "it-wibrc",
   "license": "ISC",
   "repository": {
     "type": "git",

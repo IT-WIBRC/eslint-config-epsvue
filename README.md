@@ -50,7 +50,7 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    ```js
     {
-      extends: "eps-config-vue"
+      extends: "@it-wibrc/eps-config-vue"
     }
    ```
  

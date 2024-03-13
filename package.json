@@ -22,7 +22,10 @@
     "email": "wibrc.se.jc@gmail.com"
   },
   "license": "ISC",
-  "repository": "https://github.com/IT-WIBRC/eslint-config-epsvue",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IT-WIBRC/eslint-config-epsvue.git"
+  },
   "peerDependencies": {
     "eslint": "^8.32.0",
     "prettier": "^2.8.3",

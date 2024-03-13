@@ -16,10 +16,9 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    1. Installation
         
-      - From `Main` or `Master` branch
-     ```
-      npm install @it-wibrc/eslint-config-epsvue
-     ```
+  ```js
+   npm install @it-wibrc/eslint-config-epsvue
+  ```
    2. Extend the configuration
 
    create the `.eslintrc.*` file in the root of your project. after copy this in the file:

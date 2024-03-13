@@ -1,4 +1,4 @@
-# @gge/eslint-config-epsvue
+# @it-wibrc/eslint-config-epsvue
 
 These are my settings for ESLint and Prettier that you can use for Vuejs app
 
@@ -50,7 +50,7 @@ It's recommended you install this once per every project. ESLint used to have gl
 
    ```js
     {
-      extends: "@gge/eslint-config-epsvue"
+      extends: "@it-wibrc/eslint-config-epsvue"
     }
    ```
  

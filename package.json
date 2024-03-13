@@ -7,7 +7,8 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "lint:fix": "eslint --fix",
     "stylelint": "stylelint '**/*.css'",
-    "get-version": "node -p \"require('./package').version\""
+    "get-version": "node -p \"require('./package').version\"",
+    "publish:beta": "npm publish --tag beta"
   },
   "keywords": [
     "eslint",
@@ -16,9 +17,15 @@
     "stylelint",
     "configuration"
   ],
-  "author": "it-wibrc",
+  "author": {
+    "name": "it-wibrc",
+    "email": "wibrc.se.jc@gmail.com"
+  },
   "license": "ISC",
-  "repository": "https://github.com/IT-WIBRC/eps-config-vue.git",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IT-WIBRC/eps-config-vue.git"
+  },
   "peerDependencies": {
     "eslint": "^8.32.0",
     "prettier": "^2.8.3",
@@ -43,9 +50,10 @@
     "stylelint-processor-html": "^1.0.0",
     "stylelint-scss": "^4.1.0"
   },
-  "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=8.0.0"
+  "eslintConfig": {
+    "extends": [
+      "./.eslintrc.js"
+    ]
   },
   "engineStrict": true
 }

@@ -4,9 +4,6 @@
   "description": "A reusable and shareable `eslint` configuration for Vue project",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "lint:fix": "eslint --fix",
-    "stylelint": "stylelint '**/*.css'",
     "get-version": "node -p \"require('./package').version\"",
     "publish:beta": "npm publish --tag beta"
   },

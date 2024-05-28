@@ -118,6 +118,16 @@ It's recommended you install this once per every project. ESLint used to have gl
    ```js
     quotes: ["error", "double"];
    ```
+   
+   ### Stylelint
+   
+   create a `.stylelintrc` file and copy the rules in the rules in this repository in the file `.stylelintrc` into you project. And the script 
+   
+   ```json
+   "scripts": {
+     "stylelint": "stylelint '**/*.css'",
+   }
+   ```
 
    ## With VS Code
     

@@ -2,7 +2,9 @@
   "extends": [
     "stylelint-config-html/html",
     "stylelint-config-html/vue",
-    "stylelint-config-standard"
+    "stylelint-config-standard",
+    "stylelint-config-standard-scss",
+    "stylelint-config-standard-vue/scss"
   ],
   "rules": {
     "alpha-value-notation": null,
@@ -39,9 +41,16 @@
       "em",
       "px",
       "rem",
+      "pc",
       "s",
       "vh",
-      "vw"
+      "svh",
+      "dvh",
+      "lvh",
+      "vw",
+      "svw",
+      "dvw",
+      "lvw"
     ]
   }
 }

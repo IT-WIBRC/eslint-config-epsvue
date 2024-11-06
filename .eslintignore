@@ -2,7 +2,8 @@ node_modules/**
 package-lock.json
 .husky/**
 .idea/**
+.vscode
 dist/**
+build/**
 deployment/**
-src/services/**
 !.prettierrc.js

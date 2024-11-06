@@ -85,7 +85,7 @@ module.exports = {
       },
     ],
     "quote-props": ["error", "as-needed"],
-    "sort-imports": 1,
+    "sort-imports": "off",
     "space-before-blocks": 2,
     "space-before-function-paren": "off",
     "space-in-parens": ["error", "never"],

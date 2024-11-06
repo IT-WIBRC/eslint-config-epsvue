@@ -1,6 +1,6 @@
 # eslint-config-epsvue
 
-These are my settings for ESLint and Prettier that you can use for Vuejs app
+These are my settings for ESLint, Prettier and Stylelint that you can use for Vuejs app
 
 You might like them - or you might not. Don't worry you can always change them.
 

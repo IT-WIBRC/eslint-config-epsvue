@@ -1,12 +1,10 @@
 # eslint-config-epsvue
-# eslint-config-epsvue
 
 These are my settings for ESLint, Prettier and Stylelint that you can use for Vuejs app
 
 You might like them - or you might not. Don't worry you can always change them.
 
 ## What it does
-
 
 - Lints JavaScript and TypeScript based on the latest standards
 - Fixes issues and formatting errors with Prettier
@@ -21,13 +19,14 @@ It's recommended you install this once per every project. ESLint used to have gl
    1. Installation
 
   ```
-    npm install -D eslint-config-epsvue
+    npm install -D eslint-config-epsvue@v1.0.0
   ```
 
 2. Extend the configuration
 
 create the `.eslintrc.*` file in the root of your project. after copy this in the file:
 
+   ```json
    ```json
     {
       "extends": "eslint-config-epsvue"
@@ -46,7 +45,6 @@ create the `.eslintrc.*` file in the root of your project. after copy this in th
    6. Now you can manually lint your code by running `npm run lint` and fix all fixable issues with `npm run lint:fix`. You probably want your editor to do this though.
 
 ## Settings
-## Settings
 
 If you'd like to overwrite eslint or prettier settings, you can add the rules in your `.eslintrc` file. The [ESLint rules](https://eslint.org/docs/rules/) go directly under `"rules"`.
 
@@ -62,12 +60,12 @@ If you'd like to overwrite eslint or prettier settings, you can add the rules in
    ```
 
 ### Prettier Rules
-### Prettier Rules
 
 There are only 2 prettier rules included in my config - `singleQuote: true` and `endOfLine: 'auto'`.
 
 If you want custom [prettier options](https://prettier.io/docs/en/options.html), it's recommended to create a `.prettierrc` file in your root directory like so:
 
+```json
 ```json
  {
    "singleQuote": true,
@@ -82,7 +80,7 @@ You can also put this in your EsLint config as a rule like so:
     {
       "extends": ["eslint-config-epsvue"],
       "rules": {
-        ... any eslint rules here
+        //... any eslint rules here
         "prettier/prettier": [
           "error",
           {
@@ -124,18 +122,15 @@ Note if you are switching to double quotes, you'll also need to add this eslint 
 It should work as above.
 
 ## With JetBrains Products (IntelliJ IDEA, WebStorm, RubyMine, PyCharm, PhpStorm, etc)
-## With JetBrains Products (IntelliJ IDEA, WebStorm, RubyMine, PyCharm, PhpStorm, etc)
 
 If you have previously configured ESLint to run via a File Watcher, [turn that off.](https://www.jetbrains.com/help/idea/using-file-watchers.html#enableFileWatcher)
 
 ### If you choose Local / Per Project Install Above
-### If you choose Local / Per Project Install Above
 
 1. Open ESLint configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > ESLint (optionally just search settings for "eslint")
-1. Select **Automatic ESLint Configuration**
-1. Check **Run eslint --fix on save**
+2. Select **Automatic ESLint Configuration**
+3. Check **Run eslint --fix on save**
 
-### If you choose Global Install
 ### If you choose Global Install
 
 The following steps are for a typical Node / ESLint global installtion. If you have a customized setup, refer to JetBrains docs for more [ESLint Configuration Options](https://www.jetbrains.com/help/webstorm/eslint.html#ws_js_eslint_manual_configuration).
@@ -147,7 +142,6 @@ The following steps are for a typical Node / ESLint global installtion. If you h
 5. Leave Configuration File as **Automatic Search**
 6. Check **Run eslint --fix on save**
 
-### Ensure the Prettier plugin is disabled if installed
 ### Ensure the Prettier plugin is disabled if installed
 
 1. Open Prettier configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > Prettier (optionally just search settings for "prettier")

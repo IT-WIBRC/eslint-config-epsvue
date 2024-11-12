@@ -1,10 +1,22 @@
 {
   "extends": [
     "stylelint-config-html/html",
-    "stylelint-config-html/vue",
-    "stylelint-config-standard",
-    "stylelint-config-standard-scss",
-    "stylelint-config-standard-vue/scss"
+    "stylelint-config-standard"
+  ],
+  "overrides": [
+    {
+      "files": ["*.scss", "**/*.scss"],
+      "extends": ["stylelint-config-standard-scss"]
+    },
+    {
+      "files": ["*.vue", "**/*.vue"],
+      "extends": [
+        "stylelint-config-standard-scss",
+        "stylelint-config-standard-vue",
+        "stylelint-config-recommended-vue",
+        "stylelint-config-html/vue"
+      ]
+    }
   ],
   "rules": {
     "alpha-value-notation": null,
@@ -25,11 +37,9 @@
     ],
     "block-no-empty": null,
     "color-function-notation": null,
-    "color-hex-case": null,
     "color-hex-length": null,
     "length-zero-no-unit": null,
     "no-descending-specificity": null,
-    "no-empty-first-line": null,
     "no-empty-source": null,
     "selector-class-pattern": null,
     "selector-pseudo-element-colon-notation": null,
@@ -44,6 +54,7 @@
       "pc",
       "s",
       "vh",
+      "fr",
       "svh",
       "dvh",
       "lvh",

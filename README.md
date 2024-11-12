@@ -1,5 +1,4 @@
 # eslint-config-epsvue
-# eslint-config-epsvue
 
 These are my settings for ESLint, Prettier and Stylelint that you can use for Vuejs app
 
@@ -7,52 +6,27 @@ You might like them - or you might not. Don't worry you can always change them.
 
 ## What it does
 
-
 - Lints JavaScript and TypeScript based on the latest standards
 - Fixes issues and formatting errors with Prettier
 - Lints + Fixes inside of html script tags
 - You can see all the [rules here](https://github.com/IT-WIBRC/eslint-config-epsvue/blob/master/.eslintrc.js). You are very welcome to overwrite any of these settings, or just fork the entire thing to create your own.
 - You can see all the [rules here](https://github.com/IT-WIBRC/eslint-config-epsvue/blob/master/.eslintrc.js). You are very welcome to overwrite any of these settings, or just fork the entire thing to create your own.
 
-## Project install
+## Project setup
 
 It's recommended you install this once per every project. ESLint used to have global configs, but no longer.
 
-   1. Install
+   1. Installation
 
-      a. Since github as dev dependency
-
-        - Using http
-
-          ```
-            npm install -D git+https://github.com/IT-WIBRC/eslint-config-epsvue.git
-          ```
-
-        - Using ssh
-
-          ```
-            npm install -D git+ssh://git@github.com:IT-WIBRC/eslint-config-epsvue.git
-          ```
-
-        b. Using npm (not yet usable)
-
-         - From `Main` or `Master` branch
-
-           ```
-            npm install -D eslint-config-epsvue
-           ```
-
-         - From a specific branch
-
-           ```
-            npm install -D eslint-config-epsvue#branch
-           ```
+  ```
+    npm install -D eslint-config-epsvue
+  ```
 
 2. Extend the configuration
 
 create the `.eslintrc.*` file in the root of your project. after copy this in the file:
 
-   ```js
+   ```json
     {
       "extends": "eslint-config-epsvue"
     }
@@ -70,7 +44,6 @@ create the `.eslintrc.*` file in the root of your project. after copy this in th
    6. Now you can manually lint your code by running `npm run lint` and fix all fixable issues with `npm run lint:fix`. You probably want your editor to do this though.
 
 ## Settings
-## Settings
 
 If you'd like to overwrite eslint or prettier settings, you can add the rules in your `.eslintrc` file. The [ESLint rules](https://eslint.org/docs/rules/) go directly under `"rules"`.
 
@@ -86,13 +59,12 @@ If you'd like to overwrite eslint or prettier settings, you can add the rules in
    ```
 
 ### Prettier Rules
-### Prettier Rules
 
 There are only 2 prettier rules included in my config - `singleQuote: true` and `endOfLine: 'auto'`.
 
 If you want custom [prettier options](https://prettier.io/docs/en/options.html), it's recommended to create a `.prettierrc` file in your root directory like so:
 
-```js
+```json
  {
    "singleQuote": true,
    "endOfLine": "auto",
@@ -102,7 +74,7 @@ If you want custom [prettier options](https://prettier.io/docs/en/options.html),
 
 You can also put this in your EsLint config as a rule like so:
 
-   ```js
+   ```json
     {
       "extends": ["eslint-config-epsvue"],
       "rules": {
@@ -121,7 +93,7 @@ You can also put this in your EsLint config as a rule like so:
 
 Note if you are switching to double quotes, you'll also need to add this eslint rule, or they will fight to the death!
 
-   ```js
+   ```json
     quotes: ["error", "double"];
    ```
 
@@ -148,18 +120,15 @@ Note if you are switching to double quotes, you'll also need to add this eslint 
 It should work as above.
 
 ## With JetBrains Products (IntelliJ IDEA, WebStorm, RubyMine, PyCharm, PhpStorm, etc)
-## With JetBrains Products (IntelliJ IDEA, WebStorm, RubyMine, PyCharm, PhpStorm, etc)
 
 If you have previously configured ESLint to run via a File Watcher, [turn that off.](https://www.jetbrains.com/help/idea/using-file-watchers.html#enableFileWatcher)
 
-### If you choose Local / Per Project Install Above
 ### If you choose Local / Per Project Install Above
 
 1. Open ESLint configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > ESLint (optionally just search settings for "eslint")
 1. Select **Automatic ESLint Configuration**
 1. Check **Run eslint --fix on save**
 
-### If you choose Global Install
 ### If you choose Global Install
 
 The following steps are for a typical Node / ESLint global installtion. If you have a customized setup, refer to JetBrains docs for more [ESLint Configuration Options](https://www.jetbrains.com/help/webstorm/eslint.html#ws_js_eslint_manual_configuration).
@@ -171,7 +140,6 @@ The following steps are for a typical Node / ESLint global installtion. If you h
 5. Leave Configuration File as **Automatic Search**
 6. Check **Run eslint --fix on save**
 
-### Ensure the Prettier plugin is disabled if installed
 ### Ensure the Prettier plugin is disabled if installed
 
 1. Open Prettier configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > Prettier (optionally just search settings for "prettier")

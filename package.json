@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-epsvue",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A reusable and shareable `eslint, prettier and stylelint` configuration for Vue project",
   "main": "index.js",
   "scripts": {

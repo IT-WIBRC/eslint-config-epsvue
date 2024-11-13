@@ -16,48 +16,45 @@ You might like them - or you might not. Don't worry you can always change them.
 
 It's recommended you install this once per every project. ESLint used to have global configs, but no longer.
 
-   1. Installation
+1.  Installation
 
-  ```
-    npm install -D eslint-config-epsvue@1.0.0
-  ```
+```
+  npm install -D eslint-config-epsvue@1.0.1
+```
 
 2. Extend the configuration
 
 create the `.eslintrc.*` file in the root of your project. after copy this in the file:
 
-   ```json
-   ```json
-    {
-      "extends": "eslint-config-epsvue"
-    }
-   ```
+```json
+{
+  "extends": "eslint-config-epsvue"
+}
+```
 
-   3. You can add two scripts to your package.json to lint and/or fix:
+3.  You can add two scripts to your package.json to lint and/or fix:
 
-   ```json
-    "scripts": {
-     "lint": "eslint .",
-     "lint:fix": "eslint . --fix"
-    },
-   ```
+```json
+ "scripts": {
+  "lint": "eslint .",
+  "lint:fix": "eslint . --fix"
+ },
+```
 
-   6. Now you can manually lint your code by running `npm run lint` and fix all fixable issues with `npm run lint:fix`. You probably want your editor to do this though.
+6.  Now you can manually lint your code by running `npm run lint` and fix all fixable issues with `npm run lint:fix`. You probably want your editor to do this though.
 
 ## Settings
 
 If you'd like to overwrite eslint or prettier settings, you can add the rules in your `.eslintrc` file. The [ESLint rules](https://eslint.org/docs/rules/) go directly under `"rules"`.
 
-   ```json
-    {
-      "extends": [
-        "eslint-config-epsvue"
-      ],
-      "rules": {
-        "no-console": 2,
-      }
-    }
-   ```
+```json
+{
+  "extends": ["eslint-config-epsvue"],
+  "rules": {
+    "no-console": 2
+  }
+}
+```
 
 ### Prettier Rules
 
@@ -67,55 +64,59 @@ If you want custom [prettier options](https://prettier.io/docs/en/options.html),
 
 ```json
 ```json
- {
-   "singleQuote": true,
-   "endOfLine": "auto",
-   "tabWidth": 4
- }
+{
+  "singleQuote": true,
+  "endOfLine": "auto",
+  "tabWidth": 4
+}
 ```
 
 You can also put this in your EsLint config as a rule like so:
 
-   ```json
-    {
-      "extends": ["eslint-config-epsvue"],
-      "rules": {
-        //... any eslint rules here
-        "prettier/prettier": [
-          "error",
-          {
-            "singleQuote": true,
-            "endOfLine": "auto",
-            "tabWidth": 4
-          },
-        ],
-      }
-    }
-   ```
+```json
+ {
+   "extends": ["eslint-config-epsvue"],
+   "rules": {
+     //... any eslint rules here
+     "prettier/prettier": [
+       "error",
+       {
+         "singleQuote": true,
+         "endOfLine": "auto",
+         "tabWidth": 4
+       },
+     ],
+   }
+ }
+```
 
 Note if you are switching to double quotes, you'll also need to add this eslint rule, or they will fight to the death!
 
-   ```json
-    quotes: ["error", "double"];
-   ```
+```json
+{
+  "rules": {
+    "quotes": ["error", "double"]
+  }
+}
+```
 
 ## With VS Code
 
-   You should read this entire thing. Serious!
+You should read this entire thing. Serious!
 
-   Once you have done one, or both, of the above installs. You probably want your editor to lint and fix for you. Here are the instructions for VS Code:
+Once you have done one, or both, of the above installs. You probably want your editor to lint and fix for you. Here are the instructions for VS Code:
 
 - install `eslint` abd `prettier` extensions
 - If you use `vetur`, you need to do this to avoid some `eslint` issues
-    Now we need to setup some VS Code settings via `Code/File` → `Preferences` → `Settings`. It's easier to enter these settings while editing the `settings.json` file, so click the Open (Open Settings) icon in the top right corner:
+  Now we need to setup some VS Code settings via `Code/File` → `Preferences` → `Settings`. It's easier to enter these settings while editing the `settings.json` file, so click the Open (Open Settings) icon in the top right corner:
 
-   add this :
+  add this :
 
-   ```json
-    "vetur.validation.template": false,
-    "vetur.validation.script": false,
-    "vetur.validation.style": false,   
-   ```
+  ```json
+   "vetur.validation.template": false,
+   "vetur.validation.script": false,
+   "vetur.validation.style": false,
+  ```
 
 ## With WSL
 

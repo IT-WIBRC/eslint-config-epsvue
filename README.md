@@ -32,7 +32,7 @@ It's recommended you install this once per every project. ESLint used to have gl
 1. Installation
 
    ```bash
-     npm install -D eslint-config-epsvue@1.1.0
+     npm install -D eslint-config-epsvue@1.2.1
    ```
 
 2. Extend the eslint configuration

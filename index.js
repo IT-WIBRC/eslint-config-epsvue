@@ -1,1 +1,3 @@
-module.exports = require("./.eslintrc.js");
+import eslintConfigEpsVue from "./eslint.config.mjs";
+
+export default eslintConfigEpsVue;

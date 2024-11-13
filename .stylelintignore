@@ -15,3 +15,4 @@ Dockerfile
 *.ico
 !.prettierrc.js
 */env.d.ts
+eslint.config.mjs

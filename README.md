@@ -19,13 +19,14 @@ It's recommended you install this once per every project. ESLint used to have gl
    1. Installation
 
   ```
-    npm install -D eslint-config-epsvue
+    npm install -D eslint-config-epsvue@1.0.0
   ```
 
 2. Extend the configuration
 
 create the `.eslintrc.*` file in the root of your project. after copy this in the file:
 
+   ```json
    ```json
     {
       "extends": "eslint-config-epsvue"
@@ -65,6 +66,7 @@ There are only 2 prettier rules included in my config - `singleQuote: true` and 
 If you want custom [prettier options](https://prettier.io/docs/en/options.html), it's recommended to create a `.prettierrc` file in your root directory like so:
 
 ```json
+```json
  {
    "singleQuote": true,
    "endOfLine": "auto",
@@ -78,7 +80,7 @@ You can also put this in your EsLint config as a rule like so:
     {
       "extends": ["eslint-config-epsvue"],
       "rules": {
-        ... any eslint rules here
+        //... any eslint rules here
         "prettier/prettier": [
           "error",
           {
@@ -126,8 +128,8 @@ If you have previously configured ESLint to run via a File Watcher, [turn that o
 ### If you choose Local / Per Project Install Above
 
 1. Open ESLint configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > ESLint (optionally just search settings for "eslint")
-1. Select **Automatic ESLint Configuration**
-1. Check **Run eslint --fix on save**
+2. Select **Automatic ESLint Configuration**
+3. Check **Run eslint --fix on save**
 
 ### If you choose Global Install
 

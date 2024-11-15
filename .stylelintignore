@@ -16,3 +16,4 @@ Dockerfile
 !.prettierrc.js
 */env.d.ts
 eslint.config.mjs
+**/*.js

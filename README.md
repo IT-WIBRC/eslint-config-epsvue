@@ -1,6 +1,9 @@
 # eslint-config-epsvue
 
-![NPM Version](https://img.shields.io/npm/v/eslint-config-epsvue) ![NPM Downloads](https://img.shields.io/npm/dm/eslint-config-epsvue)
+ [![js-standard-style](https://cdn.rawgit.com/standard/standard/master/badge.svg)](http://standardjs.com)
+
+![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/eslint-config-epsvue)
+ ![NPM Version](https://img.shields.io/npm/v/eslint-config-epsvue) ![NPM Downloads](https://img.shields.io/npm/dm/eslint-config-epsvue) ![NPM Downloads](https://img.shields.io/npm/dw/eslint-config-epsvue) ![GA CI](https://github.com/IT-WIBRC/eslint-config-epsvue/actions/workflows/test.yml/badge.svg)
 
 These are my settings for ESLint, Prettier and Stylelint that you can use for Vuejs app
 
@@ -12,6 +15,9 @@ This version `1.1.0` use `eslint version >= 9.0.0`, this support only the nodejs
 
 > [!WARNING]  
 > Make sure you upgrade to at least `Node.js v18.18.0` when using `ESLint v9.0.0`. One important thing to double check is the Node.js version supported by your editor when using ESLint via editor integrations. If you are unable to upgrade, we recommend continuing to use ESLint v8.56.0 until you are able to upgrade Node.js. You can read it on the [eslint's official documentation](https://eslint.org/docs/latest/use/migrate-to-9.0.0#drop-old-node)
+
+>[!NOTE]
+>The current version doesn't support the legacy .eslintrc* configuration format. If ?you want to use this format, feel free to install this version [v1.0.4](https://www.npmjs.com/package/eslint-config-epsvue/v/1.0.4)
 
 And you need to note that:
 
@@ -32,7 +38,7 @@ It's recommended you install this once per every project. ESLint used to have gl
 1. Installation
 
    ```bash
-     npm install -D eslint-config-epsvue@1.2.1
+     npm install -D eslint-config-epsvue
    ```
 
 2. Extend the eslint configuration
@@ -47,19 +53,19 @@ It's recommended you install this once per every project. ESLint used to have gl
 
 3. Extend the stylelint configuration by adding this in the `package.json`
 
-    ```json
-    "stylelint": {
-        "extends": ["eslint-config-epsvue/.stylelintrc.json"]
-      }
-    ```
+   ```json
+   "stylelint": {
+       "extends": ["eslint-config-epsvue/stylelint"]
+     }
+   ```
 
-    You can also extends it in your own `.styelintrc.json` file
+   You can also extends it in your own `.styelintrc.json` file
 
-    ```json
-      {
-        "extends": ["eslint-config-epsvue/.stylelintrc.json"]
-      }
-    ```
+   ```json
+   {
+     "extends": ["eslint-config-epsvue/stylelint"]
+   }
+   ```
 
 4. You can add two scripts to your package.json to lint, lint fix, format and style css:
 
@@ -68,7 +74,7 @@ It's recommended you install this once per every project. ESLint used to have gl
       "lint": "eslint .", // Detect errors
       "lint:fix": "eslint src/ --fix", //fix all resolvable eslint problems found starting from the base directory
       "format": "prettier src/ -w", // format code starting from the base directory
-      "stylelint": "stylelint '**/*.{css,vue,scss}'",
+      "stylelint": "stylelint --aei '**/*.{css,vue,scss}'",
     },
    ```
 
@@ -111,19 +117,19 @@ import pluginEpsVue from "eslint-plugin-epsvue";
 export default [
   ...pluginEpsVue,
   {
-    "rules": {
-      ... any eslint rules here
+    rules: {
+      //... any eslint rules here
       "no-console": 2,
       "prettier/prettier": [
-       "error",
-       {
-         "singleQuote": true,
-         "endOfLine": "auto",
-         "tabWidth": 4
-       },
-     ],
-    }
-  }
+        "error",
+        {
+          singleQuote: true,
+          endOfLine: "auto",
+          tabWidth: 4,
+        },
+      ],
+    },
+  },
 ];
 ```
 

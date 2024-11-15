@@ -1,8 +1,12 @@
 {
   "name": "eslint-config-epsvue",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A reusable and shareable `eslint` configuration for Vue project",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "stylelint"
+  ],
   "type": "module",
   "scripts": {
     "get-version": "node -p \"require('./package').version\"",
@@ -10,15 +14,16 @@
     "format": "prettier -w .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "stylelint": "stylelint '**/*.{css,vue,scss}'"
+    "stylelint": "stylelint --aei '**/*.{css,vue,scss}'",
+    "test": "node --test",
+    "watch": "npm test --ignore-scripts -- --watch"
   },
   "keywords": [
     "eslint",
     "prettier",
     "vue",
     "stylelint",
-    "configuration",
-    "eslint-config-epsvue",
+    "eslint-config",
     "stylelint-config",
     "create-eslint-config"
   ],
@@ -46,30 +51,33 @@
     "@mapbox/stylelint-processor-arbitrary-tags": "^0.4.0",
     "@vue/eslint-config-prettier": "^10.1.0",
     "@vue/eslint-config-typescript": "^14.1.3",
-    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-cypress": "^4.1.0",
     "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-storybook": "^0.11.0",
     "eslint-plugin-vue": "^9.30.0",
     "globals": "^15.12.0",
-    "stylelint-config-html": "^1.0.0",
     "stylelint-config-recommended-vue": "^1.5.0",
     "stylelint-config-standard-scss": "^13.0.0",
     "stylelint-config-standard-vue": "^1.0.0",
-    "stylelint-scss": "^6.5.0",
     "typescript-eslint": "^8.14.0"
   },
   "eslintConfig": {
     "extends": [
-      "./eslint.config.mjs"
+      "./lib/index.js"
     ]
   },
   "stylelint": {
-    "extends": "./.stylelintrc.json"
+    "extends": "./stylelint/index.js"
   },
   "engineStrict": true,
   "engines": {
     "node": ">=18.18.0"
+  },
+  "bugs": {
+    "url": "https://github.com/IT-WIBRC/eslint-config-epsvue/issues"
+  },
+  "homepage": "https://github.com/IT-WIBRC/eslint-config-epsvue#readme",
+  "devDependencies": {
+    "mocha": "^10.8.2"
   }
 }

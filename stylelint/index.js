@@ -1,39 +1,34 @@
-{
-  "extends": [
-    "stylelint-config-html/html",
-    "stylelint-config-standard"
-  ],
-  "overrides": [
+export default {
+  extends: ["stylelint-config-standard"],
+  overrides: [
     {
-      "files": ["*.scss", "**/*.scss"],
-      "extends": ["stylelint-config-standard-scss"]
+      files: ["*.scss", "**/*.scss"],
+      extends: ["stylelint-config-standard-scss"],
     },
     {
-      "files": ["*.vue", "**/*.vue"],
-      "extends": [
+      files: ["*.vue", "**/*.vue"],
+      extends: [
         "stylelint-config-standard-scss",
         "stylelint-config-standard-vue",
-        "stylelint-config-recommended-vue",
-        "stylelint-config-html/vue"
-      ]
-    }
+      ],
+    },
   ],
-  "rules": {
+  rules: {
     "alpha-value-notation": null,
     "at-rule-empty-line-before": null,
     "at-rule-no-unknown": [
       true,
       {
-        "ignoreAtRules": [
+        ignoreAtRules: [
           "extends",
           "tailwind",
           "layer",
           "apply",
           "responsive",
           "variants",
-          "screen"
-        ]
-      }
+          "screen",
+        ],
+      },
     ],
     "block-no-empty": null,
     "color-function-notation": null,
@@ -61,7 +56,7 @@
       "vw",
       "svw",
       "dvw",
-      "lvw"
-    ]
-  }
-}
+      "lvw",
+    ],
+  },
+};

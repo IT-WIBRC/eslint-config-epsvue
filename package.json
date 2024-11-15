@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-epsvue",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A reusable and shareable `eslint` configuration for Vue project",
   "main": "lib/index.js",
   "files": [

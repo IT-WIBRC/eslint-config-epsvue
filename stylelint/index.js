@@ -1,35 +1,30 @@
-{
-  "extends": [
-    "stylelint-config-html/html",
-    "stylelint-config-html/vue",
-    "stylelint-config-standard",
+module.exports = {
+  extends: [
     "stylelint-config-standard-scss",
-    "stylelint-config-standard-vue/scss"
+    "stylelint-config-standard-vue/scss",
   ],
-  "rules": {
+  rules: {
     "alpha-value-notation": null,
     "at-rule-empty-line-before": null,
     "at-rule-no-unknown": [
       true,
       {
-        "ignoreAtRules": [
+        ignoreAtRules: [
           "extends",
           "tailwind",
           "layer",
           "apply",
           "responsive",
           "variants",
-          "screen"
-        ]
-      }
+          "screen",
+        ],
+      },
     ],
     "block-no-empty": null,
     "color-function-notation": null,
-    "color-hex-case": null,
     "color-hex-length": null,
     "length-zero-no-unit": null,
     "no-descending-specificity": null,
-    "no-empty-first-line": null,
     "no-empty-source": null,
     "selector-class-pattern": null,
     "selector-pseudo-element-colon-notation": null,
@@ -50,7 +45,7 @@
       "vw",
       "svw",
       "dvw",
-      "lvw"
-    ]
-  }
-}
+      "lvw",
+    ],
+  },
+};

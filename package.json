@@ -1,12 +1,22 @@
 {
   "name": "eslint-config-epsvue",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A reusable and shareable `eslint, prettier and stylelint` configuration for Vue project",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "get-version": "node -p \"require('./package').version\"",
-    "publish:beta": "npm publish --tag beta"
+    "publish:beta": "npm publish --tag beta",
+    "format": "prettier -w .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "stylelint": "stylelint --aei '**/*.{css,vue,scss}'",
+    "test": "node --test",
+    "watch": "npm test --ignore-scripts -- --watch"
   },
+  "files": [
+    "lib",
+    "stylelint"
+  ],
   "keywords": [
     "eslint",
     "prettier",
@@ -31,28 +41,26 @@
     "stylelint": "^14.2.0"
   },
   "dependencies": {
+    "@mapbox/stylelint-processor-arbitrary-tags": "^0.4.0",
     "@rushstack/eslint-patch": "^1.1.0",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-storybook": "^0.5.12",
-    "eslint-plugin-vue": "^9.0.0",
-    "stylelint-config-html": "^1.0.0",
-    "stylelint-config-recommended": "^6.0.0",
-    "stylelint-config-recommended-vue": "^1.1.0",
-    "stylelint-config-standard": "^24.0.0",
     "stylelint-config-standard-scss": "^3.0.0",
-    "@mapbox/stylelint-processor-arbitrary-tags": "^0.4.0",
-    "stylelint-scss": "^4.1.0"
+    "stylelint-config-standard-vue": "^1.0.0"
+  },
+  "stylelint": {
+    "extends": "./stylelint/index.js"
   },
   "eslintConfig": {
     "extends": [
-      "./.eslintrc.js"
+      "./lib/index.js"
     ]
   },
-  "engineStrict": true
+  "engineStrict": true,
+  "devDependencies": {
+    "mocha": "^10.8.2"
+  }
 }

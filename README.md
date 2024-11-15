@@ -1,5 +1,9 @@
 # eslint-config-epsvue
 
+[![js-standard-style](https://cdn.rawgit.com/standard/standard/master/badge.svg)](http://standardjs.com)
+
+![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/eslint-config-epsvue) ![GA CI](https://github.com/IT-WIBRC/eslint-config-epsvue/actions/workflows/test.yml/badge.svg?branche=1.0.4)
+
 These are my settings for ESLint, Prettier and Stylelint that you can use for Vuejs app
 
 You might like them - or you might not. Don't worry you can always change them.
@@ -15,31 +19,50 @@ You might like them - or you might not. Don't worry you can always change them.
 
 It's recommended you install this once per every project. ESLint used to have global configs, but no longer.
 
-1.  Installation
+1. Installation
 
-```
-  npm install -D eslint-config-epsvue@1.0.3
-```
+   ```bash
+     npm install -D eslint-config-epsvue@1.0.4
+   ```
 
 2. Extend the configuration
 
-create the `.eslintrc.*` file in the root of your project. after copy this in the file:
+   create the `.eslintrc.*` file in the root of your project. after copy this in the file:
 
-```json
-{
-  "extends": "eslint-config-epsvue"
-}
-```
+   ```json
+   {
+     "extends": "eslint-config-epsvue"
+   }
+   ```
 
-3.  You can add two scripts to your package.json to lint and/or fix:
+3. Extend the stylelint configuration by adding this in the `package.json`
 
-```json
- "scripts": {
-  "lint": "eslint .",
-  "lint:fix": "eslint . --fix"
- },
-```
-4.  Now you can manually lint your code by running `npm run lint` and fix all fixable issues with `npm run lint:fix`. You probably want your editor to do this though.
+   ```json
+   "stylelint": {
+      "extends": ["eslint-config-epsvue/stylelint"]
+    }
+   ```
+
+   Or you can also extends it in your own `.styelintrc.json` file
+
+   ```json
+   {
+     "extends": ["eslint-config-epsvue/stylelint"]
+   }
+   ```
+
+4. You can add two scripts to your package.json to lint, lint fix, format and style css:
+
+   ```json
+    "scripts": {
+      "lint": "eslint .", // Detect errors
+      "lint:fix": "eslint src/ --fix", //fix all resolvable eslint problems found starting from the base directory
+      "format": "prettier src/ -w", // format code starting from the base directory
+      "stylelint": "stylelint --aei '**/*.{css,vue,scss}'",
+    },
+   ```
+
+Now you can manually lint your code by running `npm run lint` and fix all fixable issues with `npm run lint:fix`. You probably want your editor to do this though.
 
 ## Settings
 
@@ -71,20 +94,20 @@ If you want custom [prettier options](https://prettier.io/docs/en/options.html),
 You can also put this in your EsLint config as a rule like so:
 
 ```json
- {
-   "extends": ["eslint-config-epsvue"],
-   "rules": {
-     //... any eslint rules here
-     "prettier/prettier": [
-       "error",
-       {
-         "singleQuote": true,
-         "endOfLine": "auto",
-         "tabWidth": 4
-       },
-     ],
-   }
- }
+{
+  "extends": ["eslint-config-epsvue"],
+  "rules": {
+    //... any eslint rules here
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "endOfLine": "auto",
+        "tabWidth": 4
+      }
+    ]
+  }
+}
 ```
 
 Note if you are switching to double quotes, you'll also need to add this eslint rule, or they will fight to the death!

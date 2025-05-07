@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 
 import stylelint from "stylelint";
 
-import config from "../../stylelint/index.js";
+import config from "../../stylelint/index.mjs";
 
 describe("With css file", () => {
   const validCss = readFileSync("./__tests__/stylelint/validCss.css", "utf-8");

@@ -2,7 +2,7 @@
   "name": "eslint-config-epsvue",
   "version": "1.2.3",
   "description": "A reusable and shareable `eslint` configuration for Vue project",
-  "main": "lib/index.js",
+  "main": "lib/index.mjs",
   "files": [
     "lib",
     "stylelint"
@@ -11,12 +11,14 @@
   "scripts": {
     "get-version": "node -p \"require('./package').version\"",
     "publish:beta": "npm publish --tag beta",
-    "format": "prettier -w .",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "stylelint": "stylelint --aei '**/*.{css,vue,scss}'",
+    "version": "changeset version",
+    "release": "changeset publish --access public",
     "test": "node --test",
     "watch": "npm test --ignore-scripts -- --watch"
+  },
+  "publishConfig": {
+    "provenance": true,
+    "access": "public"
   },
   "keywords": [
     "eslint",
@@ -63,11 +65,11 @@
   },
   "eslintConfig": {
     "extends": [
-      "./lib/index.js"
+      "./lib/index.mjs"
     ]
   },
   "stylelint": {
-    "extends": "./stylelint/index.js"
+    "extends": "./stylelint/index.mjs"
   },
   "engineStrict": true,
   "engines": {
@@ -78,6 +80,7 @@
   },
   "homepage": "https://github.com/IT-WIBRC/eslint-config-epsvue#readme",
   "devDependencies": {
+    "@changesets/cli": "^2.29.3",
     "mocha": "^10.8.2"
   }
 }

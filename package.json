@@ -20,6 +20,7 @@
     "publish:beta": "npm publish --tag beta",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "changeset": "changeset",
     "version": "changeset version",
     "release": "changeset publish --access public",
     "test:stylelint": "mocha \"__tests__/stylelint/**/*.mjs\" --reporter dot --timeout 60000",

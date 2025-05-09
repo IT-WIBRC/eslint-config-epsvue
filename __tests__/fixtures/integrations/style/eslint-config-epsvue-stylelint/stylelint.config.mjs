@@ -1,5 +1,3 @@
 export default {
-  extends: [
-    "eslint-config-epsvue/stylelint",
-  ],
+  extends: ["eslint-config-epsvue/stylelint"],
 };

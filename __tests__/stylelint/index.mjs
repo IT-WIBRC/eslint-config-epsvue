@@ -16,8 +16,8 @@ describe("Integration with `eslint-config-epsvue/stylelint`", () => {
     process.chdir(
       path.join(
         __dirname,
-        "../fixtures/integrations/style/eslint-config-epsvue-stylelint"
-      )
+        "../fixtures/integrations/style/eslint-config-epsvue-stylelint",
+      ),
     );
     cp.execSync("npm i", { stdio: "inherit" });
   });

@@ -1,18 +1,16 @@
 <template>
   <div>
     <a href="#">Hello</a>
-    <div class="foo">
-      Hello
-    </div>
+    <div class="foo">Hello</div>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      color: "blue"
+      color: "blue",
     };
-  }
+  },
 };
 </script>
 

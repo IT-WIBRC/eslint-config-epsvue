@@ -16,12 +16,12 @@ describe("Integration with `eslint-config-epsvue/stylelint-minimal`", () => {
     process.chdir(
       path.join(
         __dirname,
-        "../fixtures/integrations/style/eslint-config-epsvue-stylelint-minimal"
-      )
+        "../fixtures/integrations/style/eslint-config-epsvue-stylelint-minimal",
+      ),
     );
     cp.execSync("npm i", { stdio: "inherit" });
   });
-  
+
   after(() => {
     process.chdir(originalCwd);
   });

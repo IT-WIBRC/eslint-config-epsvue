@@ -7,14 +7,22 @@
     "lib",
     "stylelint"
   ],
+  "exports": {
+    ".": "./lib/index.mjs",
+    "./stylelint": "./stylelint/index.mjs",
+    "./stylelint-minimal": "./stylelint/minimal.mjs"
+  },
   "type": "module",
   "scripts": {
     "get-version": "node -p \"require('./package').version\"",
     "publish:beta": "npm publish --tag beta",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "version": "changeset version",
     "release": "changeset publish --access public",
-    "test": "node --test",
-    "watch": "npm test --ignore-scripts -- --watch"
+    "test:stylelint": "mocha \"__tests__/stylelint/**/*.mjs\" --reporter dot --timeout 60000",
+    "deps-install": "npm link && cd __tests__/fixtures/integrations/style/eslint-config-epsvue-stylelint-minimal && npm link eslint-config-epsvue && cd ../eslint-config-epsvue-stylelint && npm link eslint-config-epsvue && cd ../../../../../",
+    "test": "npm run test:stylelint && npm unlink eslint-config-epsvue"
   },
   "publishConfig": {
     "provenance": true,
@@ -25,6 +33,8 @@
     "prettier",
     "vue",
     "stylelint",
+    "recommended",
+    "standard",
     "eslint-config",
     "stylelint-config",
     "create-eslint-config"
@@ -41,7 +51,7 @@
   "peerDependencies": {
     "eslint": ">=9",
     "prettier": "^3.3.0",
-    "stylelint": "^15.0.0 || ^16.0.0"
+    "stylelint": ">=15.0.0"
   },
   "peerDependenciesMeta": {
     "typescript": {
@@ -58,18 +68,10 @@
     "eslint-plugin-storybook": "^0.11.0",
     "eslint-plugin-vue": "^9.30.0",
     "globals": "^15.12.0",
-    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-recommended-vue": "^1.6.0",
     "stylelint-config-standard-scss": "^13.0.0",
-    "stylelint-config-standard-vue": "^1.0.0",
+    "stylelint-order": "^6.0.4",
     "typescript-eslint": "^8.14.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "./lib/index.mjs"
-    ]
-  },
-  "stylelint": {
-    "extends": "./stylelint/index.mjs"
   },
   "engineStrict": true,
   "engines": {

@@ -28,7 +28,6 @@
     "test": "npm run test:stylelint && npm unlink eslint-config-epsvue"
   },
   "publishConfig": {
-    "provenance": true,
     "access": "public"
   },
   "keywords": [

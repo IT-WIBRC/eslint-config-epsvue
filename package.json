@@ -5,7 +5,8 @@
   "main": "lib/index.mjs",
   "files": [
     "lib",
-    "stylelint"
+    "stylelint",
+    "utils"
   ],
   "exports": {
     ".": "./lib/index.mjs",

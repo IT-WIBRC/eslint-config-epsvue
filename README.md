@@ -127,14 +127,6 @@ You can import different flavors of this configuration based on your project's n
   export default [...epsvueRecommended];
   ```
 
-- **TypeScript Specific:** Optimized for Vue.js projects primarily using TypeScript. It includes the core TypeScript linting rules along with basic Vue.js support and Prettier.
-
-  ```javascript
-  import epsvueTypescript from "eslint-config-epsvue/typescript";
-
-  export default [...epsvueTypescript];
-  ```
-
 - **Minimal:** A very basic setup with essential JavaScript and Vue.js linting, plus Prettier. This is the lightest option for projects with simpler needs.
 
   ```javascript
@@ -228,7 +220,7 @@ You can import different flavors of this configuration based on your project's n
     You can run Stylelint from your terminal using the following command (usually defined in your `package.json` scripts):
 
     ```bash
-    npx stylelint  '**/*.{vue,css,scss}' --allow-empty-input
+    npx stylelint  '**/*.{vue,css,scss}' --allow-empty-input # or `--aei` instead of `--allow-empty-input`
     #or
     yarn stylelint  '**/*.{vue,css,scss}' --allow-empty-input
     #or

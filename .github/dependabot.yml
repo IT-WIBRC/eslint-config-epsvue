@@ -1,0 +1,31 @@
+version: 2
+updates:
+  # Keep bundler dependencies up to date
+  - package-ecosystem: "npm"
+    directory: "/"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    schedule:
+      interval: "weekly"
+      timezone: "Africa/Douala"
+    target-branch: "develop"
+    labels:
+      - "npm dependencies"
+      
+    groups:
+      production-dependencies:
+        dependency-type: "production"
+      development-dependencies:
+        dependency-type: "development"
+  
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    commit-message:
+      prefix: "chore(github-actions)"
+    schedule:
+      interval: "weekly"
+      timezone: "Africa/Douala"
+    target-branch: "develop"
+    labels:
+      - "github-actions dependencies"

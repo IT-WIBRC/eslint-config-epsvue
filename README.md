@@ -1,202 +1,302 @@
 # eslint-config-epsvue
 
- [![js-standard-style](https://cdn.rawgit.com/standard/standard/master/badge.svg)](http://standardjs.com)
+[![js-standard-style](https://cdn.rawgit.com/standard/standard/master/badge.svg)](http://standardjs.com)
 
 ![NPM Unpacked Size](https://img.shields.io/npm/unpacked-size/eslint-config-epsvue)
- ![NPM Version](https://img.shields.io/npm/v/eslint-config-epsvue) ![NPM Downloads](https://img.shields.io/npm/dm/eslint-config-epsvue) ![NPM Downloads](https://img.shields.io/npm/dw/eslint-config-epsvue) ![GA CI](https://github.com/IT-WIBRC/eslint-config-epsvue/actions/workflows/test.yml/badge.svg)
+![NPM Version](https://img.shields.io/npm/v/eslint-config-epsvue) ![NPM Downloads](https://img.shields.io/npm/dm/eslint-config-epsvue) ![NPM Downloads](https://img.shields.io/npm/dw/eslint-config-epsvue) ![GA CI](https://github.com/IT-WIBRC/eslint-config-epsvue/actions/workflows/test.yml/badge.svg)
 
-These are my settings for ESLint, Prettier and Stylelint that you can use for Vuejs app
+A comprehensive and shareable ESLint configuration tailored for Vue.js projects, incorporating best practices for JavaScript, TypeScript, Vue.js, Prettier, testing (Cypress, Jest/Vitest), Storybook, and security. This configuration aims to provide a solid foundation for clean, maintainable, and secure Vue.js code.
 
-You might like them - or you might not. Don't worry you can always change them.
+## Key Features
+
+- **Pre-configured for Vue.js:** Includes specific rules and settings for Vue.js single-file components (`.vue`).
+- **TypeScript Support:** Seamlessly handles both JavaScript (`.js`, `.mjs`, `.cjs`) and TypeScript (`.ts`, `.tsx`, `.mts`) projects.
+- **Prettier Integration:** Designed to work smoothly with Prettier for automatic code formatting, minimizing conflicts.
+- **Testing Framework Support:** Provides configurations optimized for Cypress end-to-end tests and Jest/Vitest unit tests.
+- **Storybook Integration:** Includes linting rules specific to Storybook stories.
+- **Security Focused:** Incorporates `eslint-plugin-security` to help identify potential security vulnerabilities.
+- **Stylistic Enforcement:** Utilizes `@stylistic/eslint-plugin` for fine-grained control over code style.
+- **Granular Control:** Offers a well-structured configuration with specific overrides for different file types.
+- **Stylelint for Styling:** Enforces consistent styling for CSS, SCSS, and styles within Vue components.
+- **Comprehensive Configuration:** Includes configurations for testing (Cypress, Jest/Vitest) and Storybook.
+- **Shareable and Extendable:** Easy to adopt in your Vue.js projects.
 
 ## What do you need to know before using this
 
 This version `1.1.0` use `eslint version >= 9.0.0`, this support only the nodejs versions above `18.18.0` same as `stylelint 16` witch support `node 18.12.0`.
 
-> [!WARNING]  
+> [!WARNING]
 > Make sure you upgrade to at least `Node.js v18.18.0` when using `ESLint v9.0.0`. One important thing to double check is the Node.js version supported by your editor when using ESLint via editor integrations. If you are unable to upgrade, we recommend continuing to use ESLint v8.56.0 until you are able to upgrade Node.js. You can read it on the [eslint's official documentation](https://eslint.org/docs/latest/use/migrate-to-9.0.0#drop-old-node)
 
->[!NOTE]
->The current version doesn't support the legacy .eslintrc* configuration format. If ?you want to use this format, feel free to install this version [v1.0.4](https://www.npmjs.com/package/eslint-config-epsvue/v/1.0.4)
+> [!NOTE]
+> The current version doesn't support the legacy .eslintrc\* configuration format. If ?you want to use this format, feel free to install this version [v1.0.4](https://www.npmjs.com/package/eslint-config-epsvue/v/1.0.4)
 
 And you need to note that:
 
-> [!NOTE]  
+> [!NOTE]
 > If you want to know more about the new configurations, you can see the [Key Differences between Configuration Formats](https://eslint.org/docs/latest/use/configure/migration-guide#key-differences-between-configuration-formats)
 
-## What it does
+## Installation
 
-- Lints JavaScript and TypeScript based on the latest standards
-- Fixes issues and formatting errors with Prettier
-- Lints + Fixes inside of html script tags
-- You can see all the [rules here](https://github.com/IT-WIBRC/eslint-config-epsvue/blob/1.1.0/eslint.config.mjs). You are very welcome to overwrite any of these settings, or just fork the entire thing to create your own.
+To use `eslint-config-epsvue` in your project, follow these steps:
 
-## Project setup
+1.  **Install the package and its peer dependencies:**
 
-It's recommended you install this once per every project. ESLint used to have global configs, but no longer.
+    Using npm:
 
-1. Installation
+    ```bash
+    npm install --save-dev eslint-config-epsvue
+    ```
 
-   ```bash
-     npm install -D eslint-config-epsvue
-   ```
+    Using yarn:
 
-2. Extend the eslint configuration
+    ```bash
+    yarn add --dev eslint-config-epsvue
+    ```
 
-   create a file called `eslint.config.mjs` file in the root of your project. after copy this in the file:
+    Using bun:
 
-   ```javascript
-   import pluginEpsVue from "eslint-plugin-epsvue";
+    ```bash
+    bun add --dev eslint-config-epsvue
+    ```
 
-   export default [...pluginEpsVue];
-   ```
+2.  **Configure ESLint:**
 
-3. Extend the stylelint configuration by adding this in the `package.json`
+    Create an `eslint.config.js` (or `eslint.config.mjs`) file in the root of your project (if you don't have one already) and add the following:
 
-   ```json
-   "stylelint": {
-       "extends": ["eslint-config-epsvue/stylelint"]
-     }
-   ```
+    ```javascript
+    import epsvue from "eslint-config-epsvue";
 
-   You can also extends it in your own `.styelintrc.json` file
+    export default [...epsvue];
+    ```
 
-   ```json
-   {
-     "extends": ["eslint-config-epsvue/stylelint"]
-   }
-   ```
+    If you need to customize or extend the configuration, you can do so by adding additional configuration objects to the exported array. For example:
 
-4. You can add two scripts to your package.json to lint, lint fix, format and style css:
+    ```javascript
+    import epsvue from "eslint-config-epsvue";
 
-   ```json
-    "scripts": {
-      "lint": "eslint .", // Detect errors
-      "lint:fix": "eslint src/ --fix", //fix all resolvable eslint problems found starting from the base directory
-      "format": "prettier src/ -w", // format code starting from the base directory
-      "stylelint": "stylelint --aei '**/*.{css,vue,scss}'",
-    },
-   ```
-
-## Settings
-
-If you'd like to overwrite eslint or prettier settings, you can add the rules in your `.eslintrc` file. The [ESLint rules](https://eslint.org/docs/rules/) go directly under `"rules"`.
-
-```javascript
-import pluginEpsVue from "eslint-plugin-epsvue";
-
-export default [
-  ...pluginEpsVue,
-  {
-    rules: {
-      "no-console": 2,
-    },
-  },
-];
-```
-
-### Prettier Rules
-
-There are only 2 prettier rules included in my config - `singleQuote: true` and `endOfLine: 'auto'`.
-
-If you want custom [prettier options](https://prettier.io/docs/en/options.html), it's recommended to create a `.prettierrc` file in your root directory like so:
-
-```json
-{
-  "singleQuote": true,
-  "endOfLine": "auto",
-  "tabWidth": 4
-}
-```
-
-You can also put this in your EsLint config as a rule like so:
-
-```javascript
-import pluginEpsVue from "eslint-plugin-epsvue";
-
-export default [
-  ...pluginEpsVue,
-  {
-    rules: {
-      //... any eslint rules here
-      "no-console": 2,
-      "prettier/prettier": [
-        "error",
-        {
-          singleQuote: true,
-          endOfLine: "auto",
-          tabWidth: 4,
+    export default [
+      ...epsvue,
+      {
+        files: ["src/**/*.js", "src/**/*.vue"],
+        rules: {
+          // Your project-specific rules or overrides
+          "no-console": "warn",
         },
-      ],
-    },
-  },
-];
-```
+      },
+    ];
+    ```
 
-## With VS Code
+3.  **Configure Stylelint:**
 
-You should read this entire thing. Serious!
+    Create a `stylelint.config.js` file in the root of your project and add the following:
 
-Once you have done one, or both, of the above installs. You probably want your editor to lint and fix for you. Here are the instructions for VS Code:
+    ```javascript
+    import epsvueStylelint from "eslint-config-epsvue/stylelint";
 
-- install `eslint` abd `prettier` extensions
-- If you use `vetur`, you need to do this to avoid some `eslint` issues
-  Now we need to setup some VS Code settings via `Code/File` → `Preferences` → `Settings`. It's easier to enter these settings while editing the `settings.json` file, so click the Open (Open Settings) icon in the top right corner:
-  Now we need to setup some VS Code settings via `Code/File` → `Preferences` → `Settings`. It's easier to enter these settings while editing the `settings.json` file, so click the Open (Open Settings) icon in the top right corner:
+    export default {
+      extends: [epsvueStylelint],
+      // Add project-specific Stylelint rules or overrides here (optional)
+      rules: {
+        "selector-class-pattern": null, // Example: Disable class name pattern
+      },
+    };
+    ```
 
-  add this :
+## Usage
 
-  ```json
-   "vetur.validation.template": false,
-   "vetur.validation.script": false,
-   "vetur.validation.style": false,
+This configuration provides linting for both JavaScript/TypeScript (via ESLint) and styling (via Stylelint).
+
+### ESLint
+
+You can import different flavors of this configuration based on your project's needs:
+
+- **Full Configuration (Default):** Includes the complete set of linting rules for JavaScript, TypeScript, Vue.js, Prettier, testing (Cypress, Jest/Vitest), Storybook, security, and stylistic enforcement. This is the configuration you get when importing `eslint-config-epsvue` directly.
+
+  ```javascript
+  import epsvue from "eslint-config-epsvue";
+
+  export default [...epsvue];
   ```
 
-## With WSL
+- **Recommended:** A generally recommended configuration that includes core JavaScript, TypeScript, and Vue.js linting, along with Prettier integration. This option omits some of the more specialized testing and Storybook rules.
 
-It should work as above.
+  ```javascript
+  import epsvueRecommended from "eslint-config-epsvue/recommended";
 
-## With JetBrains Products (IntelliJ IDEA, WebStorm, RubyMine, PyCharm, PhpStorm, etc)
+  export default [...epsvueRecommended];
+  ```
 
-If you have previously configured ESLint to run via a File Watcher, [turn that off.](https://www.jetbrains.com/help/idea/using-file-watchers.html#enableFileWatcher)
+- **TypeScript Specific:** Optimized for Vue.js projects primarily using TypeScript. It includes the core TypeScript linting rules along with basic Vue.js support and Prettier.
 
-### If you choose Local / Per Project Install Above
+  ```javascript
+  import epsvueTypescript from "eslint-config-epsvue/typescript";
 
-1. Open ESLint configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > ESLint (optionally just search settings for "eslint")
-2. Select **Automatic ESLint Configuration**
-3. Check **Run eslint --fix on save**
+  export default [...epsvueTypescript];
+  ```
 
-### If you choose Global Install
+- **Minimal:** A very basic setup with essential JavaScript and Vue.js linting, plus Prettier. This is the lightest option for projects with simpler needs.
 
-The following steps are for a typical Node / ESLint global installtion. If you have a customized setup, refer to JetBrains docs for more [ESLint Configuration Options](https://www.jetbrains.com/help/webstorm/eslint.html#ws_js_eslint_manual_configuration).
+  ```javascript
+  import epsvueMinimal from "eslint-config-epsvue/minimal";
 
-1. Open ESLint configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > ESLint (optionally just search settings for "eslint")
-2. Select **Manual ESLint configuration**
-3. Choose your **Node interpreter** from the detected installations
-4. Select the global **ESLint package** from the dropdown
-5. Leave Configuration File as **Automatic Search**
-6. Check **Run eslint --fix on save**
+  export default [...epsvueMinimal];
+  ```
 
-### Ensure the Prettier plugin is disabled if installed
+  You can still extend or customize these flavors as needed:
 
-1. Open Prettier configuration by going to File > Settings (Edit > Preferences on Mac) > Languages & Frameworks > Code Quality Tools > Prettier (optionally just search settings for "prettier")
-2. Uncheck both **On code reformat** and **On save**
-3. _Optional BUT IMPORTANT:_ If you have the Prettier extension enabled for other languages like CSS and HTML, turn it off for JS since we are doing it through Eslint already.
-   1. Make sure the **Run for files** glob does not include `js,ts,jsx,tsx`.
-   2. An example glob for styles, config, and markdown. `{**/*,*}.{yml,css,sass,md}`
+  ```javascript
+  import epsvueRecommended from "eslint-config-epsvue/recommended";
 
-There is also a section on the documentation about [💻Editor integrations](https://eslint.vuejs.org/user-guide/#editor-integrations)
+  export default [
+    ...epsvueRecommended,
+    {
+      files: ["src/**/*.js", "src/**/*.vue"],
+      rules: {
+        "no-console": "warn",
+      },
+    },
+  ];
+  ```
 
-## Resources
+- **Running ESLint:** You can run ESLint from your terminal using the following command (usually defined in your `package.json` scripts):
 
-- [eslint-plugin-vue rules](https://eslint.vuejs.org/rules/block-lang.html)
-- [Vue Macros](https://vue-macros.dev/)
-- [Migrate to v9.x](https://eslint.org/docs/latest/use/migrate-to-9.0.0)
-- [How to Install an npm Package Directly From GitHub](https://www.baeldung.com/ops/github-npm-package-direct-installation)
-- [Eslint Share Configurations](https://eslint.org/docs/latest/extend/shareable-configs)
-- [Cypress ESLint Plugin](https://github.com/cypress-io/eslint-plugin-cypress)
-- [Key Differences between Configuration Formats](https://eslint.org/docs/latest/use/configure/migration-guide#key-differences-between-configuration-formats)
+  ```bash
+  npx eslint . --ext .vue,.js,.ts,.jsx,.tsx,.mjs,.cjs,.mts
+  # or
+  yarn eslint . --ext .vue,.js,.ts,.jsx,.tsx,.mjs,.cjs,.mts
+  # or
+  bun eslint . --ext .vue,.js,.ts,.jsx,.tsx,.mjs,.cjs,.mts
+  ```
 
-## For any reports
+- **Automatic Fixing:** ESLint can automatically fix many styling and some code quality issues:
 
-For any report, problems encountered, please report on this discussion [feedbacks](https://github.com/IT-WIBRC/eslint-config-epsvue/discussions/16).
+  ```bash
+  npx eslint . --ext .vue,.js,.ts,.jsx,.tsx,.mjs,.cjs,.mts --fix
+  # or
+  yarn eslint . --ext .vue,.js,.ts,.jsx,.tsx,.mjs,.cjs,.mts --fix
+  # or
+  bun eslint . --ext .vue,.js,.ts,.jsx,.tsx,.mjs,.cjs,.mts --fix
+  ```
+
+- **Editor Integration:** It's highly recommended to integrate ESLint with your code editor for real-time feedback as you write code. Most popular editors have ESLint plugins available.
+
+### Stylelint
+
+You can import different flavors of this configuration based on your project's needs:
+
+- **Full Configuration (Default):** Includes the complete set of stylelint rules.
+
+  ```javascript
+  import epsvueStylelint from "eslint-config-epsvue/stylelint";
+
+  module.exports = {
+    extends: [epsvueStylelint],
+    // Add project-specific Stylelint rules or overrides here (optional)
+  };
+  ```
+
+- **Minimal:** A minimal stylelint configuration.
+
+  ```javascript
+  import epsvueStylelintMinimal from "eslint-config-epsvue/stylelint-minimal";
+
+  export default {
+    extends: [epsvueStylelintMinimal],
+    // Add project-specific Stylelint rules or overrides here (optional)
+  };
+  ```
+
+1.  **Configure Stylelint:**
+    
+    Create a `stylelint.config.js` file in the root of your project and extend the desired Stylelint configuration. The default is full.
+
+    ```javascript
+    import epsvueStylelint from "eslint-config-epsvue/stylelint";
+
+    export default {
+      extends: [epsvueStylelint],
+      // Add project-specific Stylelint rules or overrides here (optional)
+      rules: {
+        "selector-class-pattern": null, // Example: Disable class name pattern
+      },
+    };
+    ```
+
+2.  **Running Stylelint:** 
+
+    You can run Stylelint from your terminal using the following command (usually defined in your `package.json` scripts):
+
+    ```bash
+    npx stylelint  '**/*.{vue,css,scss}' --allow-empty-input
+    #or
+    yarn stylelint  '**/*.{vue,css,scss}' --allow-empty-input
+    #or
+    bun stylelint  '**/*.{vue,css,scss}' --allow-empty-input
+    ```
+
+3.  **Automatic Fixing:** 
+  
+    Stylelint can automatically fix many styling issues:
+
+    ```bash
+    npx stylelint  '**/*.{vue,css,scss}' --allow-empty-input --fix
+    #or
+    yarn stylelint  '**/*.{vue,css,scss}' --allow-empty-input --fix
+    #or
+    bun stylelint  '**/*.{vue,css,scss}' --allow-empty-input --fix
+    ```
+
+4.  **Editor Integration:** 
+
+It's highly recommended to integrate Stylelint with your code editor for real-time feedback as you write code. Most popular editors have Stylelint plugins available.
+Use the [stylelint.vscode-stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint) extension that [Stylelint] provides officially.
+
+You have to configure the `stylelint.validate` option of the extension to check `.vue` files, because the extension does not check the `*.vue` file by default.
+
+Example **.vscode/settings.json**:
+
+```jsonc
+{
+  "stylelint.validate": [
+      ...,
+      // ↓ Add "vue" language.
+      "vue"
+  ]
+```
+
+## Peer Dependencies
+
+The following packages are peer dependencies of `eslint-config-epsvue`. This means they need to be installed in your project alongside this configuration:
+
+- `eslint`
+- `@eslint/js`
+- `eslint-plugin-vue`
+- `@vue/eslint-config-typescript`
+- `@vue/eslint-config-prettier`
+- `eslint-plugin-prettier`
+- `eslint-plugin-cypress`
+- `eslint-plugin-storybook`
+- `@typescript-eslint/eslint-plugin`
+- `@typescript-eslint/parser`
+- `globals`
+- `@stylistic/eslint-plugin`
+- `eslint-plugin-security`
+- `prettier`
+- `stylelint`
+- `stylelint-config-recommended-vue`
+- `stylelint-config-standard-vue`
+- `stylelint-config-standard-scss`
+- `stylelint-order`
+
+## Contributing
+
+Contributions are welcome! Please read the [CONTRIBUTING.md](https://github.com/IT-WIBRC/eslint-config-epsvue/blob/main/CONTRIBUTING.md) file for guidelines on how to contribute.
+
+## License
+
+This project is open source and does not currently have a specific license file. All rights are reserved by the authors unless explicitly granted.
+
+## Stay Updated
+
+Follow [IT-WIBRC](https://github.com/IT-WIBRC) on GitHub for more updates and projects.

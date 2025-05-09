@@ -23,7 +23,7 @@ A comprehensive and shareable ESLint configuration tailored for Vue.js projects,
 
 ## What do you need to know before using this
 
-This version `1.1.0` use `eslint version >= 9.0.0`, this support only the nodejs versions above `18.18.0` same as `stylelint 16` witch support `node 18.12.0`.
+Start from the version `1.1.0`, you have to use `eslint version >= 9.0.0` as this support only the nodejs versions above `18.18.0` same as `stylelint 16` witch support `node 18.12.0`.
 
 > [!WARNING]
 > Make sure you upgrade to at least `Node.js v18.18.0` when using `ESLint v9.0.0`. One important thing to double check is the Node.js version supported by your editor when using ESLint via editor integrations. If you are unable to upgrade, we recommend continuing to use ESLint v8.56.0 until you are able to upgrade Node.js. You can read it on the [eslint's official documentation](https://eslint.org/docs/latest/use/migrate-to-9.0.0#drop-old-node)

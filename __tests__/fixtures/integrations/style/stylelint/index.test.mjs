@@ -83,7 +83,10 @@ describe("With css inside vue file", () => {
     "./__tests__/stylelint/TheValid.vue",
     "utf-8",
   );
-  const invalidVueCss = readFileSync("./__tests__/stylelint/TheInvalid.vue", "utf-8");
+  const invalidVueCss = readFileSync(
+    "./__tests__/stylelint/TheInvalid.vue",
+    "utf-8",
+  );
 
   describe("flags no warnings with valid css", () => {
     let result;
@@ -95,11 +98,13 @@ describe("With css inside vue file", () => {
       });
     });
 
-
     it("flags one warnings", () => {
       assert.equal(result.results[0].warnings.length, 1);
       assert.equal(result.results[0].warnings[0].rule, "CssSyntaxError");
-      assert.equal(result.results[0].warnings[0].text, "Unknown word (CssSyntaxError)");
+      assert.equal(
+        result.results[0].warnings[0].text,
+        "Unknown word (CssSyntaxError)",
+      );
     });
   });
 

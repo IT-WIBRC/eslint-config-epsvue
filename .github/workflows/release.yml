@@ -34,9 +34,8 @@ jobs:
         with:
           publish: npm run release
           version: npm run version
-          commit: "chore: new release"
-          title: "chore: new release candidate"
+          commit: "chore: release eslint-config-epsvue"
+          title: "chore: release eslint-config-epsvue"
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

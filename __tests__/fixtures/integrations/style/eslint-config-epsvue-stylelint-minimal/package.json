@@ -1,0 +1,13 @@
+{
+    "name": "eslint-config-epsvue-test-stylelint-minimal",
+    "private": true,
+    "version": "1.2.3",
+    "description": "",
+    "devDependencies": {
+        "eslint-config-epsvue": "file:../../../../..",
+        "stylelint": "^16.0.0"
+    },
+    "engines": {
+        "node": ">=18.18.0"
+    }
+}

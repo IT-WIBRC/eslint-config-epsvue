@@ -1,5 +1,11 @@
 # eslint-config-epsvue
 
+## 1.3.1
+
+### Patch Changes
+
+- d36919f: Add `utils` folder in the plublish packahe, adding dependabot for dependencies management and review the documentation
+
 ## 1.3.0
 
 ### Minor Changes

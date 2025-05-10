@@ -297,7 +297,7 @@ The following packages are peer dependencies of `eslint-config-epsvue`. This mea
 
 ## Contributing
 
-Contributions are welcome! Please read the [CONTRIBUTING.md](https://github.com/IT-WIBRC/eslint-config-epsvue/blob/main/CONTRIBUTING.md) file for guidelines on how to contribute.
+Contributions are welcome! Please read the [CONTRIBUTING.md](./CONTRIBUTING.md) file for guidelines on how to contribute.
 
 ## License
 

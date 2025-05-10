@@ -1,5 +1,12 @@
 # eslint-config-epsvue
 
+## 1.3.2
+
+### Patch Changes
+
+- 54486c7: Add `utils` folder in the plublish packahe, adding dependabot for dependencies management and review the documentation
+- 6db7182: Display error when detecting typescript files in the project but no related dependencies and fix the contributing link in the documentation
+
 ## 1.3.1
 
 ### Patch Changes

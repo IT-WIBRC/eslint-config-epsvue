@@ -225,6 +225,7 @@ You can import different flavors of this configuration based on your project's n
       // Add project-specific Stylelint rules or overrides here (optional)
       rules: {
         "selector-class-pattern": null, // Example: Disable class name pattern
+        "order/properties-order": [],
       },
     };
     ```
@@ -268,8 +269,18 @@ Example **.vscode/settings.json**:
       ...,
       // ↓ Add "vue" language.
       "vue"
+  ],
+  "eslint.validate": [
+    ...,
+    // ↓ Add "vue" language.
+    "javascript",
+    "typescript",
+    "vue"
   ]
+}
 ```
+
+ **RQ**: Sometimes, you may need to restart your editor for the changes to take effect. In vscode, you can do this by pressing `Ctrl + Shift + P` and selecting `Reload Window`.
 
 ## Peer Dependencies
 

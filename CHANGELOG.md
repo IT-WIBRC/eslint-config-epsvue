@@ -1,5 +1,11 @@
 # eslint-config-epsvue
 
+## 1.3.3
+
+### Patch Changes
+
+- 56673d5: Fix linter errors when working with typescript and ignore unknown css properties
+
 ## 1.3.2
 
 ### Patch Changes

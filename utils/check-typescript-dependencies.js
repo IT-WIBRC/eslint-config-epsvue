@@ -85,11 +85,11 @@ function getProjectType() {
  * If TypeScript dependencies are missing, it also logs a warning to the console.
  */
 export async function checkTypeScriptDependencies() {
-  let typescriptEslintPlugin = null;
   let typescriptEslintParser = null;
   let vueEslintConfigTypescript = null;
-  let typescript = null;
   let typescriptEslint = null;
+  let typescriptEslintPlugin = null
+  let typescript = null;
   let displayWarning = false;
 
   try {
@@ -98,13 +98,12 @@ export async function checkTypeScriptDependencies() {
 
     if (projectType === "ts") {
       try {
-        typescriptEslintPlugin = await import(
-          "@typescript-eslint/eslint-plugin"
-        );
-        typescriptEslintParser = await import("@typescript-eslint/parser");
-        vueEslintConfigTypescript = await import(
-          "@vue/eslint-config-typescript"
-        );
+        typescriptEslintParser = (await import("@typescript-eslint/parser")).default;
+        
+        typescriptEslintPlugin = (await import("@typescript-eslint/eslint-plugin")).default;
+
+        vueEslintConfigTypescript = await import("@vue/eslint-config-typescript");
+
         typescriptEslint = await import("typescript-eslint");
       } catch (missingDependencyError) {
         displayWarning = true;
@@ -132,7 +131,7 @@ export async function checkTypeScriptDependencies() {
       "@typescript-eslint/parser@'>=8.0.0'",
       "@vue/eslint-config-typescript@'>=14.0.0'",
       "typescript-eslint@'>=8.32.0'",
-      "typescript@'>=5.0.0'",
+      "typescript@'>=4.8.4'",
     ];
     const errorMessage =
       "[⚠️  eslint-config-epsvue] Partial TypeScript support.";
@@ -146,7 +145,6 @@ export async function checkTypeScriptDependencies() {
   }
 
   return {
-    typescriptEslintPlugin,
     typescriptEslintParser,
     vueEslintConfigTypescript,
     typescript,

@@ -1,5 +1,11 @@
 # eslint-config-epsvue
 
+## 1.3.4
+
+### Patch Changes
+
+- b5236a5: refactor(deps): update dependencies to stable one and clean
+
 ## 1.3.3
 
 ### Patch Changes

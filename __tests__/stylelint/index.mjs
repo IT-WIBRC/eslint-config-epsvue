@@ -3,8 +3,8 @@ import cp from "child_process";
 import path from "path";
 import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url); // Get the resolved path to the file
-const __dirname = path.dirname(__filename); // Get the name of the directory
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const STYLELINT = `.${path.sep}node_modules${path.sep}.bin${path.sep}stylelint`;
 

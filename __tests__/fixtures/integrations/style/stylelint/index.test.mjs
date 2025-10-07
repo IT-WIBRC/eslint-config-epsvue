@@ -127,7 +127,6 @@ describe("With css inside vue file", () => {
     });
 
     it("corrects warning text", () => {
-      console.log(result.results[0].warnings[0].text);
       assert.equal(
         result.results[0].warnings[0].text,
         "Unknown word (CssSyntaxError)",

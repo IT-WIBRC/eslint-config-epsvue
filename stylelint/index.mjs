@@ -131,7 +131,7 @@ export default {
         "content",
         "cursor",
       ],
-      { unspecified: "ignore" }
+      { unspecified: "ignore" },
     ],
   },
 };

@@ -1,5 +1,5 @@
-import { logger } from "./logger.js"; // Assuming this is your logger
-import { readdirSync, statSync, existsSync } from "fs";
+import { logger } from "./logger.js";
+import { readdirSync, statSync } from "fs";
 import { resolve, extname } from "path";
 import { cwd } from "process";
 
@@ -9,9 +9,9 @@ import { cwd } from "process";
  * @returns {string} 'js', 'ts', or '' (empty string)
  */
 function getProjectType() {
-  const jsExtensions = [".js", ".jsx", ".mjs", ".cjs"]; // Include module extensions
+  const jsExtensions = [".js", ".jsx", ".mjs", ".cjs"];
   const tsExtensions = [".ts", ".tsx"];
-  const configExtensions = [".js", ".cjs", ".mjs", ".ts", ".cts"]; // Include module extensions
+  const configExtensions = [".js", ".cjs", ".mjs", ".ts", ".cts"];
   const projectPath = cwd();
   const excludedDirectories = ["node_modules", "dist", "build", "out"];
   const excludedConfigPrefixes = [
@@ -24,7 +24,7 @@ function getProjectType() {
     "postcss.config",
     "tailwind.config",
   ];
-  const excludedFiles = ["tsconfig.json"]; // Explicitly exclude tsconfig.json
+  const excludedFiles = ["tsconfig.json"];
 
   let hasJS = false;
   let hasTS = false;
@@ -88,7 +88,7 @@ export async function checkTypeScriptDependencies() {
   let typescriptEslintParser = null;
   let vueEslintConfigTypescript = null;
   let typescriptEslint = null;
-  let typescriptEslintPlugin = null
+  let typescriptEslintPlugin = null;
   let typescript = null;
   let displayWarning = false;
 
@@ -98,13 +98,19 @@ export async function checkTypeScriptDependencies() {
 
     if (projectType === "ts") {
       try {
-        typescriptEslintParser = (await import("@typescript-eslint/parser")).default;
-        
-        typescriptEslintPlugin = (await import("@typescript-eslint/eslint-plugin")).default;
+        typescriptEslintParser = (await import("@typescript-eslint/parser"))
+          .default;
 
-        vueEslintConfigTypescript = await import("@vue/eslint-config-typescript");
+        typescriptEslintPlugin = (
+          await import("@typescript-eslint/eslint-plugin")
+        ).default;
+
+        vueEslintConfigTypescript = await import(
+          "@vue/eslint-config-typescript"
+        );
 
         typescriptEslint = await import("typescript-eslint");
+        // oxlint-disable-next-line no-unused-vars
       } catch (missingDependencyError) {
         displayWarning = true;
       }
@@ -114,13 +120,11 @@ export async function checkTypeScriptDependencies() {
       error instanceof Error &&
       error.message.includes("Cannot find package")
     ) {
-      //  TypeScript is not installed, which is fine if the project is JS.
       const projectType = getProjectType();
       if (projectType === "ts") {
         displayWarning = true;
       }
     } else {
-      // Re-throw other errors.  This is important for debugging.
       throw error;
     }
   }
@@ -147,6 +151,7 @@ export async function checkTypeScriptDependencies() {
   return {
     typescriptEslintParser,
     vueEslintConfigTypescript,
+    typescriptEslintPlugin,
     typescript,
     typescriptEslint,
   };

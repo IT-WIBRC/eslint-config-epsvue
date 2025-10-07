@@ -10,14 +10,14 @@
 
 ### Patch Changes
 
-- 54486c7: Add `utils` folder in the plublish packahe, adding dependabot for dependencies management and review the documentation
+- 54486c7: Add `utils` folder in the publish package, adding dependabot for dependencies management and review the documentation
 - 6db7182: Display error when detecting typescript files in the project but no related dependencies and fix the contributing link in the documentation
 
 ## 1.3.1
 
 ### Patch Changes
 
-- d36919f: Add `utils` folder in the plublish packahe, adding dependabot for dependencies management and review the documentation
+- d36919f: Add `utils` folder in the publish package, adding dependabot for dependencies management and review the documentation
 
 ## 1.3.0
 
